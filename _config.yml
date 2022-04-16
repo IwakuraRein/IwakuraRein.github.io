@@ -1,1 +1,5 @@
 theme: jekyll-theme-minimal
+title: Alex Fu
+description: The CGer.
+logo: /assets/Avater.png
+show_downloads: false
