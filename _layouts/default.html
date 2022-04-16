@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1"> {% seo %}
-    <link rel="stylesheet" href="{{ " /assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -15,9 +15,9 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1><a href="{{ " / " | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+            <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
-            {% if site.logo %}
+            <!-- {% if site.logo %}
             <img src="{{site.logo | relative_url}}" alt="Logo" /> {% endif %}
 
             <p>{{ site.description | default: site.github.project_tagline }}</p>
@@ -31,9 +31,9 @@
                 <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
                 <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
                 <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-            </ul>
+            </ul> -->
             {% endif %}
-            <!-- <table width="270">
+            <table width="270">
                 <tr>
                     <td>
                         <a href="mailto:alexhuku@hotmail.com"><img src="assets/icons/mail-icon.png" width="32" height="32" alt="send mail" /></a>
@@ -48,7 +48,7 @@
                         <a href="https://twitter.com/AlexFu8304"><img src="assets/icons/twitter-icon.png" width="32" height="32" alt="Twitter" /></a>
                     </td>
                 </tr>
-            </table> -->
+            </table>
             <!-- <ul class="downloads">
                 <li>
                     <a href="mailto:alexhuku@hotmail.com"><img src="assets/icons/mail-icon.png" width="32" height="32" alt="send mail" /></a>
