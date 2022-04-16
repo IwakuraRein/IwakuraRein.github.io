@@ -2,6 +2,6 @@
 layout: default
 ---
 
-## About me
+# About me
 
-## Selected Projects
+# Selected Projects
