@@ -381,7 +381,8 @@ a:hover small {
 }
 
 .wrapper {
-    width: 1000px;
+    max-width: 1200px;
+    min-width: 240px;
     margin: 0 auto
 }
 
@@ -408,7 +409,8 @@ pre {
 
 table {
     width: 100%;
-    border-collapse: collapse
+    border-collapse: collapse;
+    text-align: center;
 }
 
 th,
@@ -446,9 +448,6 @@ kbd {
 }
 
 header {
-    width: 240px;
-    float: left;
-    position: fixed;
     -webkit-font-smoothing: subpixel-antialiased
 }
 
@@ -514,8 +513,7 @@ strong {
 }
 
 section {
-    width: 680px;
-    float: right;
+    min-width: 180px;
     padding-bottom: 50px
 }
 
@@ -531,81 +529,41 @@ hr {
 }
 
 footer {
-    width: 240px;
-    float: left;
-    position: fixed;
-    bottom: 50px;
+    text-align: center;
     -webkit-font-smoothing: subpixel-antialiased
 }
 
-@media print,
-screen and (max-width: 960px) {
-    div.wrapper {
-        width: auto;
-        margin: 0
-    }
-    header,
-    section,
-    footer {
-        float: none;
-        position: static;
-        width: auto
-    }
+@media (min-width: 561px) {
     header {
-        padding-right: 320px
+        float: left;
+        position: fixed;
+        width: 240px
     }
     section {
-        border: 1px solid #e5e5e5;
-        border-width: 1px 0;
-        padding: 20px 0;
-        margin: 0 0 20px
+        float: left;
+        padding-left: 300px;
+        padding-top: 0px;
     }
-    header a small {
-        display: inline
-    }
-    header ul {
-        position: absolute;
-        right: 50px;
-        top: 52px
+    footer {
+        position: fixed;
+        bottom: 50px;
+        width: 240px;
     }
 }
 
-@media print,
-screen and (max-width: 720px) {
-    body {
-        word-wrap: break-word
-    }
+@media (max-width: 560px) {
     header {
-        padding: 0
+        float: none;
+        width: 100%;
     }
-    header ul,
-    header p.view {
-        position: static
+    section {
+        float: none;
+        padding-left: 0;
     }
-    pre,
-    code {
-        word-wrap: normal
-    }
-}
-
-@media print,
-screen and (max-width: 480px) {
-    body {
-        padding: 15px
-    }
-    .downloads {
-        width: 99%
-    }
-    .downloads li,
-    .downloads li+li+li {
-        width: 33%
-    }
-}
-
-@media print {
-    body {
-        padding: 0.4in;
-        font-size: 12pt;
-        color: #444
+    footer {
+        position: static;
+        bottom: 50px;
+        margin: auto;
+        width: 100%;
     }
 }
