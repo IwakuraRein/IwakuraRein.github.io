@@ -312,7 +312,6 @@
 
 body {
     background-color: #fff;
-    padding: 50px;
     font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #585858;
     font-weight: 400
@@ -533,11 +532,16 @@ footer {
     -webkit-font-smoothing: subpixel-antialiased
 }
 
-@media (min-width: 561px) {
+@media (min-width: 720px) {
     header {
         float: left;
         position: fixed;
         width: 240px
+    }
+    body {
+        padding: 50px;
+        word-wrap: normal;
+        background-color: white;
     }
     section {
         float: left;
@@ -551,7 +555,10 @@ footer {
     }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 721px) {
+    body {
+        padding: 24px;
+    }
     header {
         float: none;
         width: 100%;
@@ -562,7 +569,6 @@ footer {
     }
     footer {
         position: static;
-        bottom: 50px;
         margin: auto;
         width: 100%;
     }
