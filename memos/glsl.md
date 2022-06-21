@@ -2,7 +2,7 @@
 
 The **OpenGL Shading Language (GLSL)** is the principal shading language for *OpenGL* and *Vulkan*.
 
-[back](../index.md)
+[back](../)
 
 ## Data Types
 
