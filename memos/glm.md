@@ -8,19 +8,19 @@
 
 * `glm::vec3{ }`
   
-  $\overrightarrow{(0,0,0)}$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(0,0,0)}">
 
 * `glm::vec3{ 1.f }`
   
-  $\overrightarrow{(1,1,1)}$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(1,1,1)}">
 
 * `glm::vec3{ 1.f, 2.f, 3.f }`
   
-  $\overrightarrow{(1,2,3)}$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(1,2,3)}">
 
 * `glm::vec4{ glm::vec3{ 1.f, 2.f, 3.f }, 4.f }`
   
-  $\overrightarrow{(1,2,3,4)}$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(1,2,3,4)}">
 
 ### Matrices
 
@@ -28,11 +28,11 @@ GLM uses column major ordering by default.
 
 * `glm::mat3{ 0.f }`
   
-  $\begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{pmatrix}">
 
 * `glm::mat3{ 1.f }`
   
-  $\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}">
 
 * ```cpp
   glm::mat3{{1.f, 2.f, 3.f},
@@ -40,7 +40,7 @@ GLM uses column major ordering by default.
             {7.f, 8.f, 9.f}}
   ```
   
-  $\begin{pmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \\ \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \\ \end{pmatrix}">
 
 * ```cpp
   glm::mat3{glm::vec3{1.f},
@@ -48,18 +48,18 @@ GLM uses column major ordering by default.
             {3.f, 3.f, 3.f}}
   ```
   
-  $\begin{pmatrix} 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ \end{pmatrix}">
 
 * ```cpp
   glm::mat2x3{{1.f, 2.f, 3.f},
               {4.f, 5.f, 6.f}};
   ```
   
-  $\begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \\ \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \\ \end{pmatrix}">
 
 * `glm::mat4{ glm::mat3{ 2.f } }`
   
-  $\begin{pmatrix}2 \cdot I & \begin{matrix} 0\\0\\0 \end{matrix} \\ \begin{matrix} 0 & 0 & 0 \end{matrix} & 1 \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix}2 \cdot I & \begin{matrix} 0\\0\\0 \end{matrix} \\ \begin{matrix} 0 & 0 & 0 \end{matrix} & 1 \end{pmatrix}">
 
 ### Quaternions
 
@@ -84,31 +84,31 @@ glm::mat3 m3{{3.f, 3.f, 3.f},
 ```
 * `2.f * v1`
   
-  $2 \cdot \overrightarrow{(1,2,3)} = \overrightarrow{(2,4,6)}$
+  <img src="http://latex.codecogs.com/svg.latex?2 \cdot \overrightarrow{(1,2,3)} = \overrightarrow{(2,4,6)}">
 
 * `v1 * v2`
   
-  $\overrightarrow{(1\cdot4,2\cdot5,3\cdot6)} = \overrightarrow{(4,10,18)}$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(1\cdot4,2\cdot5,3\cdot6)} = \overrightarrow{(4,10,18)}">
 
 * `glm::dot(v1, v2)`
   
-  $\overrightarrow{(1,2,3)} \cdot \overrightarrow{(4,5,6)} = 32$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(1,2,3)} \cdot \overrightarrow{(4,5,6)} = 32">
 
 * `glm::cross(v1, v2)`
   
-  $\overrightarrow{(1,2,3)} \times \overrightarrow{(4,5,6)} = \overrightarrow{(-3,6,-3)}$
+  <img src="http://latex.codecogs.com/svg.latex?\overrightarrow{(1,2,3)} \times \overrightarrow{(4,5,6)} = \overrightarrow{(-3,6,-3)}">
 
 * ` m1 * m2`
   
-  $M_1 \times M_2 = \begin{pmatrix} 12 & 24 & 36 \\ 15 & 30 & 45 \\ 18 & 36 & 54 \\ \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?M_1 \times M_2 = \begin{pmatrix} 12 & 24 & 36 \\ 15 & 30 & 45 \\ 18 & 36 & 54 \\ \end{pmatrix}">
 
 * `v1 * m1`
   
-  $V_1 \times M_1 = \begin{pmatrix} 14 & 32 & 50 \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?V_1 \times M_1 = \begin{pmatrix} 14 & 32 & 50 \end{pmatrix}">
 
 * `m1 * v1`
   
-  $M_1 \times V_1 = \begin{pmatrix} 30 \\ 36 \\ 42 \end{pmatrix}$
+  <img src="http://latex.codecogs.com/svg.latex?M_1 \times V_1 = \begin{pmatrix} 30 \\ 36 \\ 42 \end{pmatrix}">
   
 * `m1 * m2 * m3`
   
