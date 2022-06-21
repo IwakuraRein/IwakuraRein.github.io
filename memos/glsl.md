@@ -2,8 +2,6 @@
 
 The **OpenGL Shading Language (GLSL)** is the principal shading language for *OpenGL* and *Vulkan*.
 
-[back](../)
-
 ## Data Types
 
 * `vecN`, `bvecN`, `ivecN`, `uvecN`, `dvecN`
@@ -24,11 +22,11 @@ The **OpenGL Shading Language (GLSL)** is the principal shading language for *Op
 * `max(x.y)`
 * `clamp(x,minVar,maxVar)`
 * `mix(x,y,a)`
-  * $x \cdot (1-a) + y\cdot (1-a)$
+  * <img src="http://latex.codecogs.com/svg.latex?x \cdot (1-a) + y\cdot (1-a)">
 * `step(edge,x)`
-  * $\left\{\begin{matrix} 0 & x < edge \\ 1 & x \geqslant edge \\ \end{matrix}\right. $
+  * <img src="http://latex.codecogs.com/svg.latex?\left\{\begin{matrix} 0 & x < edge \\ 1 & x \geqslant edge \\ \end{matrix}\right. ">
 * `smoothstep(edge0,edge1,x)`
-  * $\left\{\begin{matrix} 0 & x \leqslant edge_0 \\ 1 & x \geqslant edge_1 \\ x & \mathrm{otherwise} \\ \end{matrix}\right.$
+  * <img src="http://latex.codecogs.com/svg.latex?\left\{\begin{matrix} 0 & x \leqslant edge_0 \\ 1 & x \geqslant edge_1 \\ x & \mathrm{otherwise} \\ \end{matrix}\right.">
 * `radians(x)`
 * `degress(x)`
 * `sin(x)`
@@ -40,28 +38,28 @@ The **OpenGL Shading Language (GLSL)** is the principal shading language for *Op
 * `pow(x,y)`
 * `exp(x)`
 * `exp2(x)`
-  * $2^x$
+  * <img src="http://latex.codecogs.com/svg.latex?2^x">
 * `log(x)`
-  * $\ln{x}$
+  * <img src="http://latex.codecogs.com/svg.latex?\ln{x}">
 * `log2(x)`
-  * $\log_2{x}$
+  * <img src="http://latex.codecogs.com/svg.latex?\log_2{x}">
 * `sqrt(x)`
 * `inversesqrt(x)`
-  * $\frac{1}{\sqrt{x}}$
+  * <img src="http://latex.codecogs.com/svg.latex?\frac{1}{\sqrt{x}}">
 * `length(x)`
 * `distance(x,y)`
 * `dot(x,y)`
 * `cross(x,y)`
 * `normalize(x)`
 * `reflect(x,N)`
-  * For the incident vector I and surface orientation $N$, returns the reflection direction. $N$ must already be normalized in order to
+  * For the incident vector I and surface orientation *N*, returns the reflection direction. *N* must already be normalized in order to
 achieve the desired result.
-  * $x-2 \cdot N \cdot \operatorname{dot} \left (N, x \right )$
+  * <img src="http://latex.codecogs.com/svg.latex?x-2 \cdot N \cdot \operatorname{dot} \left (N, x \right )">
 * `faceforward(N,x,y)`
-  * $\left\{\begin{matrix} N & \operatorname{dot} \left (x, y \right ) < 0 \\ -N & \operatorname{otherwise} \\ \end{matrix}\right.$
+  * <img src="http://latex.codecogs.com/svg.latex?\left\{\begin{matrix} N & \operatorname{dot} \left (x, y \right ) < 0 \\ -N & \operatorname{otherwise} \\ \end{matrix}\right.">
 * `refract(x,N,eta)`
-  * For the incident vector I and surface normal $N$, and the ratio of indices of refraction $eta$, return the refraction vector. $I$ and $N$ must already be normalized to get the desired results.
-  * $k=1.0-e t a *$ eta $*(1.0-\operatorname{dot}(N, I) \cdot \operatorname{dot}(N, I)) \\ result = \begin{cases} 0 & k<0 \\ eta * I-(eta * \operatorname{dot}(N, I)+\sqrt{k}) * N & \mathrm {otherwise}\end{cases}$
+  * For the incident vector I and surface normal *N*, and the ratio of indices of refraction eta, return the refraction vector. *I* and *N* must already be normalized to get the desired results.
+  * <img src="http://latex.codecogs.com/svg.latex?k=1.0-eta \cdot eta \cdot (1.0-\operatorname{dot}(N, I) \cdot \operatorname{dot}(N, I)) \\ result = \begin{cases} 0 & k<0 \\ eta * I-(eta * \operatorname{dot}(N, I)+\sqrt{k}) * N & \mathrm {otherwise}\end{cases}">
 * `texture(sampler, coord)`
 
 ## Internal Variables
@@ -83,7 +81,7 @@ compatible mechanism for controlling user clipping. The element `gl_ClipDistance
 * `gl_CullDistance[]`
   * Provide a mechanism for controlling user culling. The element `gl_CullDistance[i]` specifies a cull distance for plane i. A istance of 0 means the vertex is on the plane, a positive distance means the vertex is inside the cull volume, and a negative distance means the point is outside the cull volume. Primitives whose vertices all have a negative cull distance for plane i will be discarded.
   
-    They arra is predeclared as unsized and must be sized by the shader either redeclaring it with a size or indexing it only with constant integral expressions. The size determines the number and set of enabled cull distances and can be at most gl_MaxCullDistances. The number of varying components (see `gl_MaxVaryingComponents`) consumed by `gl_CullDistance` will match the size of the array. Shaders writing gl_CullDistance must write all enabled distances, or culling results are undefined.
+    They array is predeclared as unsized and must be sized by the shader either redeclaring it with a size or indexing it only with constant integral expressions. The size determines the number and set of enabled cull distances and can be at most gl_MaxCullDistances. The number of varying components (see `gl_MaxVaryingComponents`) consumed by `gl_CullDistance` will match the size of the array. Shaders writing gl_CullDistance must write all enabled distances, or culling results are undefined.
 
     As an output variable, `gl_CullDistance` provides the place for the shader to write these distances. As an input in all but the fragment language, it reads the values written in the previous shader stage. In the fragment language, `gl_CullDistance` array contains linearly interpolated values for the vertex values written by a shader to the `gl_CullDistance` vertex output variable.
 
