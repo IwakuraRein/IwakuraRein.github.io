@@ -112,8 +112,7 @@ glm::mat3 m3{{3.f, 3.f, 3.f},
   
 * `m1 * m2 * m3`
   
-  $\begin{align*}
-M_1 \times \left ( M_2 \times M_3 \right ) & = M_1 \times \begin{pmatrix} 18& 12& 6\\ 18& 12& 6\\ 18& 12& 6\end{pmatrix}\\ & = \begin{pmatrix} 216 & 144 & 72 \\ 270 & 180 & 90 \\ 324 & 216 & 108 \end{pmatrix}\end{align*}$
+  <img src="http://latex.codecogs.com/svg.latex?\begin{align*}M_1 \times \left ( M_2 \times M_3 \right ) & = M_1 \times \begin{pmatrix} 18& 12& 6\\ 18& 12& 6\\ 18& 12& 6\end{pmatrix}\\ & = \begin{pmatrix} 216 & 144 & 72 \\ 270 & 180 & 90 \\ 324 & 216 & 108 \end{pmatrix}\end{align*}">
 
 ## Functions
 
@@ -158,6 +157,3 @@ glm::mat3 m2{glm::make_mat3(pM2)};
 //2  2  2
 //1  1  1
 ```
-
-
-  
