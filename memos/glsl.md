@@ -24,7 +24,7 @@ The **OpenGL Shading Language (GLSL)** is the principal shading language for *Op
 * `mix(x,y,a)`
   * <img src="http://latex.codecogs.com/svg.latex?x \cdot (1-a) + y\cdot (1-a)">
 * `step(edge,x)`
-  * <img src="http://latex.codecogs.com/svg.latex?\left\{\begin{matrix} 0 & x < edge \\ 1 & x \geqslant edge \\ \end{matrix}\right. ">
+  * <img src="http://latex.codecogs.com/svg.latex?\left\{\begin{matrix} 0 & x \leqslant edge \\ 1 & x \geqslant edge \\ x & \mathrm{otherwise} \\ \end{matrix}\right.">
 * `smoothstep(edge0,edge1,x)`
   * <img src="http://latex.codecogs.com/svg.latex?\left\{\begin{matrix} 0 & x \leqslant edge_0 \\ 1 & x \geqslant edge_1 \\ x & \mathrm{otherwise} \\ \end{matrix}\right.">
 * `radians(x)`
