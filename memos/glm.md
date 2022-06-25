@@ -122,6 +122,9 @@ glm::mat3 m3{{3.f, 3.f, 3.f},
 
 * `glm::degrees(x)`
 
+* `glm::inverse(m)`
+
+
 See [GLSL's functions](./glsl.md#functions).
 
 ### Matrix Transformation
