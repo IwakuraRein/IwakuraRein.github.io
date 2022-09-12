@@ -20,7 +20,8 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" draggable="false">
     <source src="./docs/projects/media/565 boids.mp4" type="video/mp4"> -->
-<img src="./docs/projects/imgs/565_screenshot1.png" alt="Boid Flocking"/>
+
+<img src="./docs/projects/imgs/2.1-50000.gif" alt="Boid Flocking"/>
 <!-- </video> -->
 
 These are the course projects of <a href="https://cis565-fall-2022.github.io/" target="_blank">CIS 565 - GPU Programming and Architecture</a>. In this course, I will delve into GPU architecture and learn about CUDA, WebGL, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
