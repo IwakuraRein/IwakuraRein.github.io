@@ -12,9 +12,15 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 ### Naku
 
-<img src="./docs/projects/imgs/naku_screenshot1.png" alt="Naku screenshot" />
+<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
+
+## [Nagi](https://github.com/IwakuraRein/Nagi)
+
+<img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
+
+Nagi is a toy path tracer developed in CUDA.
 
 ### CIS 565 Course Projects
 
@@ -26,7 +32,7 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 These are the course projects of <a href="https://cis565-fall-2022.github.io/" target="_blank">CIS 565 - GPU Programming and Architecture</a>. In this course, I will delve into GPU architecture and learn about CUDA, WebGL, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
 
-### Teleport
+### <a href="https://github.com/IwakuraRein/Teleport_FPS_Game" target="_blank">Teleport</a>
 
 <img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>
 
