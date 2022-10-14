@@ -16,7 +16,7 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
-## [Nagi](https://github.com/IwakuraRein/Nagi)
+### [Nagi](https://github.com/IwakuraRein/Nagi)
 
 <img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
