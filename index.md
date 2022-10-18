@@ -49,3 +49,27 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 * [GLSL](./docs/cheat_sheets/glsl)
 
 * [GLM](./docs/cheat_sheets/glm)
+
+## Free Rendering Resources
+
+* [Bitterli's Rendering Resources](https://benedikt-bitterli.me/resources/)
+
+* [McGuire Computer Graphics Archive](http://casual-effects.com/data/index.html)
+
+* [Mitsuba Example Scenes](https://www.mitsuba-renderer.org/download.html)
+
+* [glTF Sample Models](https://github.com/KhronosGroup/glTF-Sample-Models)
+
+* [Poly Haven](https://polyhaven.com/)
+
+* [CGTrader](https://www.cgtrader.com/free-3d-models)
+
+* [Blend Swap](https://blendswap.com/)
+
+* [Sketchfab](https://sketchfab.com)
+
+* [TurboSquid](https://resources.turbosquid.com/)
+
+* [Free3D.com](https://free3d.com)
+
+* [Dev Assets](https://devassets.com/)
