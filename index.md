@@ -50,7 +50,11 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [GLM](./docs/cheat_sheets/glm)
 
+* [Transformations](./docs/cheat_sheets/transform)
+
 ## Free Rendering Resources
+
+### Scenes
 
 * [Bitterli's Rendering Resources](https://benedikt-bitterli.me/resources/)
 
@@ -70,6 +74,22 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [TurboSquid](https://resources.turbosquid.com/)
 
-* [Free3D.com](https://free3d.com)
+* [Free3D](https://free3d.com)
 
 * [Dev Assets](https://devassets.com/)
+
+* [ORCA](https://developer.nvidia.com/orca)
+
+### Renderers
+
+* [PBRT](https://pbrt.org/)
+
+* [Mitsuba](https://www.mitsuba-renderer.org)
+
+* [Blender](https://blendjet.su/)
+
+* [Tungsten](https://github.com/tunabrain/tungsten)
+
+* [Baikal](https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRender-Baikal)
+
+* [Falcor](https://developer.nvidia.com/falcor)
