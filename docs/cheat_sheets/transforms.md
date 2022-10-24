@@ -6,7 +6,6 @@ categories:
 tags:
 - Graphics
 ---
-
 {% raw %}
 
 ## Homogeneous Matrices
@@ -163,3 +162,4 @@ m[2][1] = 2 * y * z + 2 * w * x;
 m[2][2] = 1 - 2 * x * x - 2 * y * y;
 return m;
 ```
+{% endraw %}
