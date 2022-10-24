@@ -13,31 +13,79 @@ tags:
 
 Right handed coordinate. Counterclockwise rotation.
 
-$ S = \begin{bmatrix} S & 0 & 0 & 0 \\ 0 & S & 0 & 0 \\ 0 & 0 & S & 1\end{bmatrix}$
+$$
+S = \begin{bmatrix} S & 0 & 0 & 0 \\
+0 & S & 0 & 0 \\
+0 & 0 & S & 1\end{bmatrix}
+$$
 
-$ T = \left [ \begin{array}{c|c} I & \vec{d} \\ \hline  0 & 1 \end{array} \right ]$
+$$
+T = \left [ \begin{array}{c|c} I & \vec{d} \\
+\hline  0 & 1 \end{array} \right ]
+$$
 
-$ R_x = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \cos{\theta_x} & -\sin{\theta_x} \\ 0 & \sin{\theta_x} & \cos{\theta_x} \end{bmatrix} $
+$$
+R_x = \begin{bmatrix} 1 & 0 & 0 \\
+0 & \cos{\theta_x} & -\sin{\theta_x} \\
+0 & \sin{\theta_x} & \cos{\theta_x} \end{bmatrix} 
+$$
 
-$ R_y = \begin{bmatrix} \cos{\theta_y} & 0 & \sin{\theta_y} \\ 0 & 1 & 0 \\-\sin{\theta_y} & 0 & \cos{\theta_y} \end{bmatrix} $
+$$
+R_y = \begin{bmatrix} \cos{\theta_y} & 0 & \sin{\theta_y} \\
+0 & 1 & 0 \\
+-\sin{\theta_y} & 0 & \cos{\theta_y} \end{bmatrix} 
+$$
 
-$ R_z = \begin{bmatrix} \cos{\theta_z} & -\sin{\theta_z} & 0 \\ \sin{\theta_z} & \cos{\theta_z} & 0 \\ 0 & 0 & 1 \end{bmatrix} $
+$$
+R_z = \begin{bmatrix} \cos{\theta_z} & -\sin{\theta_z} & 0 \\
+\sin{\theta_z} & \cos{\theta_z} & 0 \\
+0 & 0 & 1 \end{bmatrix} 
+$$
 
-$R_{yzx} = \begin{bmatrix} c_y c_z & s_y s_x - c_y c_x s_z & c_x s_y + c_y s_z s_x \\  s_z & c_z c_x & - c_z s_x \\ - c_z s_y & c_y s_x + c_x s_y s_z & c_y c_x - s_y s_z s_x \end{bmatrix}$
+$$
+R_{yzx} = \begin{bmatrix} c_y c_z & s_y s_x - c_y c_x s_z & c_x s_y + c_y s_z s_x \\
+ s_z & c_z c_x & - c_z s_x \\
+-c_z s_y & c_y s_x + c_x s_y s_z & c_y c_x - s_y s_z s_x \end{bmatrix}
+$$
 
-$R_{xzy} = \begin{bmatrix} c_z c_y & - s_z & c_z s_y \\ s_x s_y + c_x c_y s_z & c_x c_z & c_x s_z s_y - c_y s_x \\ c_y s_x s_z - c_x s_y & c_z s_x & c_x c_y + s_x s_z s_y \end{bmatrix}$
+$$
+R_{xzy} = \begin{bmatrix} c_z c_y & - s_z & c_z s_y \\
+s_x s_y + c_x c_y s_z & c_x c_z & c_x s_z s_y - c_y s_x \\
+c_y s_x s_z - c_x s_y & c_z s_x & c_x c_y + s_x s_z s_y \end{bmatrix}
+$$
 
-$R_{zyx} = \begin{bmatrix}  c_z c_y & c_z s_y s_x - c_x s_z & s_z s_x + c_z c_x s_y \\  c_y s_z & c_z c_x + s_z s_y s_x & c_x s_z s_y - c_z s_x \\  - s_y & c_y s_x & c_y c_x  \end{bmatrix}$
+$$
+R_{zyx} = \begin{bmatrix}  c_z c_y & c_z s_y s_x - c_x s_z & s_z s_x + c_z c_x s_y \\
+ c_y s_z & c_z c_x + s_z s_y s_x & c_x s_z s_y - c_z s_x \\
+ -s_y & c_y s_x & c_y c_x  \end{bmatrix}
+$$
 
-$R_{zxy} = \begin{bmatrix} c_z c_y - s_z s_x s_y & - c_x s_z & c_z s_y + c_y s_z s_x \\ c_y s_z + c_z s_x s_y & c_z c_x & s_z s_y - c_z c_y s_x \\ - c_x s_y & s_x & c_x c_y \end{bmatrix}$
+$$
+R_{zxy} = \begin{bmatrix} c_z c_y - s_z s_x s_y & - c_x s_z & c_z s_y + c_y s_z s_x \\
+c_y s_z + c_z s_x s_y & c_z c_x & s_z s_y - c_z c_y s_x \\
+-c_x s_y & s_x & c_x c_y \end{bmatrix}
+$$
 
-$R_{xyz} = \begin{bmatrix} c_y c_z & - c_y s_z & s_y \\ c_x s_z + c_z s_x s_y & c_x c_z - s_x s_y s_z & - c_y s_x \\ s_x s_z - c_x c_z s_y & c_z s_x + c_x s_y s_z & c_x c_y \end{bmatrix}$
+$$
+R_{xyz} = \begin{bmatrix} c_y c_z & - c_y s_z & s_y \\
+c_x s_z + c_z s_x s_y & c_x c_z - s_x s_y s_z & - c_y s_x \\
+s_x s_z - c_x c_z s_y & c_z s_x + c_x s_y s_z & c_x c_y \end{bmatrix}
+$$
 
-$R_{yxz} = \begin{bmatrix} c_y c_z + s_y s_x s_z & c_z s_y s_x - c_y s_z &   c_x s_y \\  c_x s_z & c_x c_z & - s_x \\ c_y s_x s_z - c_z s_y & c_y c_z s_x + s_y s_z & c_y c_x \end{bmatrix}$
+$$
+R_{yxz} = \begin{bmatrix} c_y c_z + s_y s_x s_z & c_z s_y s_x - c_y s_z & c_x s_y \\
+ c_x s_z & c_x c_z & - s_x \\
+c_y s_x s_z - c_z s_y & c_y c_z s_x + s_y s_z & c_y c_x \end{bmatrix}
+$$
 
-$H = S \times T \times R$
+$$
+H = S \times T \times R
+$$
 
-$H^{-1} = \left [ \begin{array}{c|c} \frac{1}{S} \times R^T & -R^T \times \vec{d} \\ \hline  0 & 1 \end{array} \right ]$
+$$
+H^{-1} = \left [ \begin{array}{c|c} \frac{1}{S} \times R^T & -R^T \times \vec{d} \\
+\hline  0 & 1 \end{array} \right ]
+$$
 
 Global transformations are pre-multiply.
 
