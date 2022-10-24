@@ -12,79 +12,31 @@ tags:
 
 Right handed coordinate. Counterclockwise rotation.
 
-$$
-S = \begin{bmatrix} S & 0 & 0 & 0 \\
-0 & S & 0 & 0 \\
-0 & 0 & S & 1\end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?S = \begin{pmatrix} S & 0 & 0 & 0 \\ 0 & S & 0 & 0 \\ 0 & 0 & S & 1\end{pmatrix}">
 
-$$
-T = \left [ \begin{array}{c|c} I & \vec{d} \\
-\hline  0 & 1 \end{array} \right ]
-$$
+<img src="http://latex.codecogs.com/svg.latex?T = \left ( \begin{array}{c|c} I & \vec{d} \\ \hline  0 & 1 \end{array} \right )">
 
-$$
-R_x = \begin{bmatrix} 1 & 0 & 0 \\
-0 & \cos{\theta_x} & -\sin{\theta_x} \\
-0 & \sin{\theta_x} & \cos{\theta_x} \end{bmatrix} 
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_x = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos{\theta_x} & -\sin{\theta_x} \\ 0 & \sin{\theta_x} & \cos{\theta_x} \end{pmatrix} ">
 
-$$
-R_y = \begin{bmatrix} \cos{\theta_y} & 0 & \sin{\theta_y} \\
-0 & 1 & 0 \\
--\sin{\theta_y} & 0 & \cos{\theta_y} \end{bmatrix} 
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_y = \begin{pmatrix} \cos{\theta_y} & 0 & \sin{\theta_y} \\ 0 & 1 & 0 \\-\sin{\theta_y} & 0 & \cos{\theta_y} \end{pmatrix} ">
 
-$$
-R_z = \begin{bmatrix} \cos{\theta_z} & -\sin{\theta_z} & 0 \\
-\sin{\theta_z} & \cos{\theta_z} & 0 \\
-0 & 0 & 1 \end{bmatrix} 
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_z = \begin{pmatrix} \cos{\theta_z} & -\sin{\theta_z} & 0 \\ \sin{\theta_z} & \cos{\theta_z} & 0 \\ 0 & 0 & 1 \end{pmatrix} ">
 
-$$
-R_{yzx} = \begin{bmatrix} c_y c_z & s_y s_x - c_y c_x s_z & c_x s_y + c_y s_z s_x \\
- s_z & c_z c_x & - c_z s_x \\
--c_z s_y & c_y s_x + c_x s_y s_z & c_y c_x - s_y s_z s_x \end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_{yzx} = \begin{pmatrix} c_y c_z & s_y s_x - c_y c_x s_z & c_x s_y + c_y s_z s_x \\  s_z & c_z c_x & - c_z s_x \\ - c_z s_y & c_y s_x + c_x s_y s_z & c_y c_x - s_y s_z s_x \end{pmatrix}">
 
-$$
-R_{xzy} = \begin{bmatrix} c_z c_y & - s_z & c_z s_y \\
-s_x s_y + c_x c_y s_z & c_x c_z & c_x s_z s_y - c_y s_x \\
-c_y s_x s_z - c_x s_y & c_z s_x & c_x c_y + s_x s_z s_y \end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_{xzy} = \begin{pmatrix} c_z c_y & - s_z & c_z s_y \\ s_x s_y + c_x c_y s_z & c_x c_z & c_x s_z s_y - c_y s_x \\ c_y s_x s_z - c_x s_y & c_z s_x & c_x c_y + s_x s_z s_y \end{pmatrix}">
 
-$$
-R_{zyx} = \begin{bmatrix}  c_z c_y & c_z s_y s_x - c_x s_z & s_z s_x + c_z c_x s_y \\
- c_y s_z & c_z c_x + s_z s_y s_x & c_x s_z s_y - c_z s_x \\
- -s_y & c_y s_x & c_y c_x  \end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_{zyx} = \begin{pmatrix}  c_z c_y & c_z s_y s_x - c_x s_z & s_z s_x + c_z c_x s_y \\  c_y s_z & c_z c_x + s_z s_y s_x & c_x s_z s_y - c_z s_x \\  - s_y & c_y s_x & c_y c_x  \end{pmatrix}">
 
-$$
-R_{zxy} = \begin{bmatrix} c_z c_y - s_z s_x s_y & - c_x s_z & c_z s_y + c_y s_z s_x \\
-c_y s_z + c_z s_x s_y & c_z c_x & s_z s_y - c_z c_y s_x \\
--c_x s_y & s_x & c_x c_y \end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_{zxy} = \begin{pmatrix} c_z c_y - s_z s_x s_y & - c_x s_z & c_z s_y + c_y s_z s_x \\ c_y s_z + c_z s_x s_y & c_z c_x & s_z s_y - c_z c_y s_x \\ - c_x s_y & s_x & c_x c_y \end{pmatrix}">
 
-$$
-R_{xyz} = \begin{bmatrix} c_y c_z & - c_y s_z & s_y \\
-c_x s_z + c_z s_x s_y & c_x c_z - s_x s_y s_z & - c_y s_x \\
-s_x s_z - c_x c_z s_y & c_z s_x + c_x s_y s_z & c_x c_y \end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_{xyz} = \begin{pmatrix} c_y c_z & - c_y s_z & s_y \\ c_x s_z + c_z s_x s_y & c_x c_z - s_x s_y s_z & - c_y s_x \\ s_x s_z - c_x c_z s_y & c_z s_x + c_x s_y s_z & c_x c_y \end{pmatrix}">
 
-$$
-R_{yxz} = \begin{bmatrix} c_y c_z + s_y s_x s_z & c_z s_y s_x - c_y s_z & c_x s_y \\
- c_x s_z & c_x c_z & - s_x \\
-c_y s_x s_z - c_z s_y & c_y c_z s_x + s_y s_z & c_y c_x \end{bmatrix}
-$$
+<img src="http://latex.codecogs.com/svg.latex?R_{yxz} = \begin{pmatrix} c_y c_z + s_y s_x s_z & c_z s_y s_x - c_y s_z & c_x s_y \\ c_x s_z & c_x c_z & - s_x \\ c_y s_x s_z - c_z s_y & c_y c_z s_x + s_y s_z & c_y c_x \end{pmatrix}">
 
-$$
-H = S \times T \times R
-$$
+<img src="http://latex.codecogs.com/svg.latex?H = S \times T \times R">
 
-$$
-H^{-1} = \left [ \begin{array}{c|c} \frac{1}{S} \times R^T & -R^T \times \vec{d} \\
-\hline  0 & 1 \end{array} \right ]
-$$
+<img src="http://latex.codecogs.com/svg.latex?H^{-1} = \left ( \begin{array}{c|c} \frac{1}{S} \times R^T & -R^T \times \vec{d} \\ \hline  0 & 1 \end{array} \right )">
 
 Global transformations are pre-multiply.
 
@@ -94,21 +46,21 @@ To transform from right handed to left handed, simply reverse the z-axis compone
 
 ## Quaternion
 
-$\vec{q} = \binom{\cos{\frac{\theta}{2}}}{\sin{\frac{\theta}{2}} \cdot \hat{u}}$, where $\theta$ is angle, $\hat{u}$ is axis.
+<img src="http://latex.codecogs.com/svg.latex?\vec{q} = \binom{\cos{\frac{\theta}{2}}}{\sin{\frac{\theta}{2}} \cdot \hat{u}}">, where <img src="http://latex.codecogs.com/svg.latex?\theta"> is angle, <img src="http://latex.codecogs.com/svg.latex?\hat{u}"> is axis.
 
-Denote $\cos{\frac{\theta}{2}}$ by $S$, $\sin{\frac{\theta}{2}}\cdot \hat{u}$ by $\vec{V}$:
+Denote <img src="http://latex.codecogs.com/svg.latex?\cos{\frac{\theta}{2}}"> by <img src="http://latex.codecogs.com/svg.latex?S">, <img src="http://latex.codecogs.com/svg.latex?\sin{\frac{\theta}{2}}\cdot \hat{u}"> by <img src="http://latex.codecogs.com/svg.latex?\vec{V}">:
 
-$\vec{q}_1 + \vec{q}_2 = \binom{S_1 + S_2}{\vec{V}_1 + \vec{V}_2}$
+<img src="http://latex.codecogs.com/svg.latex?\vec{q}_1 + \vec{q}_2 = \binom{S_1 + S_2}{\vec{V}_1 + \vec{V}_2}">
 
-$\vec{q}_1 \times \vec{q}_2 = \binom{S_1 S_2 - \vec{V}_1 \vec{V}_2}{S_1\vec{V}_2+S_2\vec{V}_1+\vec{V}_1\times\vec{V}_2}$
+<img src="http://latex.codecogs.com/svg.latex?\vec{q}_1 \times \vec{q}_2 = \binom{S_1 S_2 - \vec{V}_1 \vec{V}_2}{S_1\vec{V}_2+S_2\vec{V}_1+\vec{V}_1\times\vec{V}_2}">
 
-$\left\| \vec{q} \right\| = \sqrt{S^2 + \left\| \vec{V} \right\| ^2}$
+<img src="http://latex.codecogs.com/svg.latex?\left\| \vec{q} \right\| = \sqrt{S^2 + \left\| \vec{V} \right\| ^2}">
 
-$\vec{q}^{-1} = \frac{1}{\left\| \vec{q} \right\|^2} \binom{S}{-\vec{V}}$
+<img src="http://latex.codecogs.com/svg.latex?\vec{q}^{-1} = \frac{1}{\left\| \vec{q} \right\|^2} \binom{S}{-\vec{V}}">
 
-To rotate a vector $\vec{p}$ by quaternion $\vec{q}$: 
+To rotate a vector <img src="http://latex.codecogs.com/svg.latex?\vec{p}"> by quaternion <img src="http://latex.codecogs.com/svg.latex?\vec{q}">: 
 
-$\vec{q} \cdot \binom{0}{\vec{p}} \cdot \vec{q}^{-1}$
+<img src="http://latex.codecogs.com/svg.latex?\vec{q} \cdot \binom{0}{\vec{p}} \cdot \vec{q}^{-1}">
 
 To convert a rotation matrix to quaternion (assume `mat3` is row-major):
 
