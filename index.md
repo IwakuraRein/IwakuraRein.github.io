@@ -50,7 +50,7 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [GLM](./docs/cheat_sheets/glm)
 
-* [Transformations](./docs/cheat_sheets/transform)
+* [Transformations](./docs/cheat_sheets/transforms)
 
 ## Free Rendering Resources
 
