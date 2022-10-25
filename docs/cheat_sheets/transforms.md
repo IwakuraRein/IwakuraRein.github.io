@@ -6,6 +6,7 @@ categories:
 tags:
 - Graphics
 ---
+
 {% raw %}
 
 ## Homogeneous Matrices
@@ -114,4 +115,35 @@ m[2][1] = 2 * y * z + 2 * w * x;
 m[2][2] = 1 - 2 * x * x - 2 * y * y;
 return m;
 ```
+
+### Interpolation
+
+**SDouble**
+
+$(2\cdot q_1 \cdot q_2)\cdot q2 - q_1$
+
+**SBisect**
+
+$\frac{q_1+q_2}{\left \| q_1+q_2 \right \|}$
+
+**Slerp**
+
+```cpp
+quat o;
+quat p = q0, q = q1;
+double cosine = Dot(p, q);
+if (cosine == 1) {
+    o = (1 - u) * p + u * q;
+    return o.Normalize();
+}
+if (cosine < 0) {
+    p = -p;
+    cosine = -cosine;
+}
+double sine = sqrt(1 - cosine * cosine);
+double theta = acos(cosine);
+o = (sin((1 - u) * theta) * p + sin(u * theta) * q) / sine;
+return o.Normalize();
+```
+
 {% endraw %}
