@@ -35,7 +35,7 @@ Right handed coordinate. Counterclockwise rotation.
 
 <img src="http://latex.codecogs.com/svg.latex?R_{yxz} = \begin{pmatrix} c_y c_z + s_y s_x s_z & c_z s_y s_x - c_y s_z & c_x s_y \\ c_x s_z & c_x c_z & - s_x \\ c_y s_x s_z - c_z s_y & c_y c_z s_x + s_y s_z & c_y c_x \end{pmatrix}">
 
-<img src="http://latex.codecogs.com/svg.latex?H = S \times T \times R">
+<img src="http://latex.codecogs.com/svg.latex?H = S \times R \times T">
 
 <img src="http://latex.codecogs.com/svg.latex?H^{-1} = \left ( \begin{array}{c|c} \frac{1}{S} \times R^T & -R^T \times \vec{d} \\ \hline  0 & 1 \end{array} \right )">
 
