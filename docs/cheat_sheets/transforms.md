@@ -120,7 +120,7 @@ return m;
 
 **SDouble**
 
-<img src="http://latex.codecogs.com/svg.latex?(2\cdot q_1 \cdot q_2)\cdot q2 - q_1">
+<img src="http://latex.codecogs.com/svg.latex?(2\cdot q_1 \cdot q_2)\cdot q_2 - q_1">
 
 **SBisect**
 
