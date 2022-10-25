@@ -120,11 +120,11 @@ return m;
 
 **SDouble**
 
-$(2\cdot q_1 \cdot q_2)\cdot q2 - q_1$
+<img src="http://latex.codecogs.com/svg.latex?(2\cdot q_1 \cdot q_2)\cdot q2 - q_1">
 
 **SBisect**
 
-$\frac{q_1+q_2}{\left \| q_1+q_2 \right \|}$
+<img src="http://latex.codecogs.com/svg.latex?\frac{q_1+q_2}{\left \| q_1+q_2 \right \|}">
 
 **Slerp**
 
