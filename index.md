@@ -34,13 +34,13 @@ These are the course projects of <a href="https://cis565-fall-2022.github.io/" t
 
 ### <a href="https://github.com/IwakuraRein/Teleport_FPS_Game" target="_blank">Teleport</a>
 
-<img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>
+<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4"></video>
 
 In this game we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
 
 ### Dog Fight
 
-<img src="./docs/projects/imgs/dog_fight_screenshot1.png" alt="Dog Fight Screenshot"/>
+<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4"></video>
 
 We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a object detection model. The goal of using YOLO was to allow player to control character by waving hands in front of a webcam. This is the project for the Undergraduate Innovation and Entrepreneurship Training Program.
 
