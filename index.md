@@ -12,19 +12,21 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 ### Naku
 
-<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
-
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
+
+<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
 
 ### [Nagi](https://github.com/IwakuraRein/Nagi)
 
+Nagi is a toy path tracer developed in CUDA.
+
 <img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
-Nagi is a toy path tracer developed in CUDA.
+Artisit: [NewSee2l035](https://blendswap.com/profile/35454) 
 
 ### CIS 565 Course Projects
 
-<table>
+<table style="width:95%">
     <tr>
         <th>Boids Flocking Simulation with CUDA</th>
         <th>Grass Rendering with Vulkan</th>
@@ -41,7 +43,7 @@ These are the course projects of <a href="https://cis565-fall-2022.github.io/" t
 
 <!--<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4"></video>-->
 <!--<img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>-->
-<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;"></video>
+<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></video>
 
 In this game we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
 
@@ -49,7 +51,7 @@ In this game we combined the mechanism from the famous Portal game with FPS. Pla
 
 <!--<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4"></video>-->
 <!--<img src="./docs/projects/imgs/dog_fight_screenshot1.png" alt="Dog Fight Screenshot"/>-->
-<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;"></video>
+<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></video>
 
 We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a object detection model. The goal of using YOLO was to allow player to control character by waving hands in front of a webcam. This is the project for the Undergraduate Innovation and Entrepreneurship Training Program.
 
