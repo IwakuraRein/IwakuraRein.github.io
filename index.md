@@ -22,7 +22,7 @@ Nagi is a toy path tracer developed in CUDA.
 
 <img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
-Artisit: [NewSee2l035](https://blendswap.com/profile/35454) 
+Artist: [NewSee2l035](https://blendswap.com/profile/35454) 
 
 ### CIS 565 Course Projects
 
