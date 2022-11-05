@@ -10,38 +10,64 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 ## Selected Projects
 
-### Naku
-
-<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
-
-Naku is a toy rasterization-based renderer developed in Vulkan and C++.
-
 ### [Nagi](https://github.com/IwakuraRein/Nagi)
-
-<img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
 Nagi is a toy path tracer developed in CUDA.
 
+<img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
+
+Artist: [NewSee2l035](https://blendswap.com/profile/35454) 
+
+### Naku
+
+Naku is a toy rasterization-based renderer developed in Vulkan and C++.
+
+<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
+
 ### CIS 565 Course Projects
 
-<table style="width:720px">
+<table style="width:95%">
     <tr>
-        <th>Boids Flocking Simulation with CUDA</th>
-        <th>Grass Rendering with Vulkan</th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking">Boids Flocking Simulation with CUDA</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Renderin">Grass Rendering with Vulkan</a></th>
     </tr>
     <tr>
         <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking"><img src="./docs/projects/imgs/2.1-50000.gif" alt="Boid Flocking"/></a></th>
         <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Rendering"><img src="./docs/projects/imgs/my_grass.gif" alt="Grass Rendering"/></a></th>
     </tr>
+    <tr>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-4-CUDA-Denoiser">Denoising Path Tracing with CUDA</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer">Real-time Ray Tracing VR Scenes with Vulkan</a></th>
+    </tr>
+    <tr>
+        <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></th>
+        <th>
+            <p>In progress. Plan to introduce:</p>
+            <ul>
+                <li style="text-align: left;"><a href="https://benedikt-bitterli.me/restir/">ReSTIR</a></li>
+                <li style="text-align: left;"><a href="https://www.youtube.com/watch?v=2GYXuM10riw">Ridiance Cache</a></li>
+                <li style="text-align: left;"><a href="https://research.adobe.com/publication/tessellation-free-displacement-mapping-for-ray-tracing/">Displacement Mapping</a></li>
+                <li style="text-align: left;"><a href="https://dl.acm.org/doi/10.5555/3151666.3151696">Foveated Rendering</a></li>
+                <li style="text-align: left;"><a href="https://ieeexplore.ieee.org/document/9089460">Stereo Rendering</a></li>
+            </ul>
+        </th>
+    </tr>
+    
 </table>
 
 These are the course projects of <a href="https://cis565-fall-2022.github.io/" target="_blank">CIS 565 - GPU Programming and Architecture</a>. In this course, I will delve into GPU architecture and learn about CUDA, WebGL, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
 
-### <a href="https://github.com/IwakuraRein/Teleport_FPS_Game" target="_blank">Teleport</a>
+### Generating Anime Avatars
+
+![](./assets/img/avaters/Avater0.png)
+
+I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater on the left.  
+
+### Teleport
 
 <!--<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4"></video>-->
 <!--<img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>-->
-<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:720px;"></video>
+<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></video>
 
 In this game we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
 
@@ -49,7 +75,7 @@ In this game we combined the mechanism from the famous Portal game with FPS. Pla
 
 <!--<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4"></video>-->
 <!--<img src="./docs/projects/imgs/dog_fight_screenshot1.png" alt="Dog Fight Screenshot"/>-->
-<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:720px;"></video>
+<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></video>
 
 We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a object detection model. The goal of using YOLO was to allow player to control character by waving hands in front of a webcam. This is the project for the Undergraduate Innovation and Entrepreneurship Training Program.
 
