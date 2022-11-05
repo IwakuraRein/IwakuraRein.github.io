@@ -10,12 +10,6 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 ## Selected Projects
 
-### Naku
-
-Naku is a toy rasterization-based renderer developed in Vulkan and C++.
-
-<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
-
 ### [Nagi](https://github.com/IwakuraRein/Nagi)
 
 Nagi is a toy path tracer developed in CUDA.
@@ -23,6 +17,12 @@ Nagi is a toy path tracer developed in CUDA.
 <img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
 Artist: [NewSee2l035](https://blendswap.com/profile/35454) 
+
+### Naku
+
+Naku is a toy rasterization-based renderer developed in Vulkan and C++.
+
+<img src="./docs/projects/imgs/naku.gif" alt="Naku screenshot" />
 
 ### CIS 565 Course Projects
 
@@ -38,6 +38,12 @@ Artist: [NewSee2l035](https://blendswap.com/profile/35454)
 </table>
 
 These are the course projects of <a href="https://cis565-fall-2022.github.io/" target="_blank">CIS 565 - GPU Programming and Architecture</a>. In this course, I will delve into GPU architecture and learn about CUDA, WebGL, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
+
+### Generating Anime Avatars
+
+![](./assets/img/avaters/Avater0.png)
+
+I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater on the left.  
 
 ### <a href="https://github.com/IwakuraRein/Teleport_FPS_Game" target="_blank">Teleport</a>
 
