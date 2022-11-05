@@ -40,15 +40,15 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
         <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer">Real-time Ray Tracing VR Scenes with Vulkan</a></th>
     </tr>
     <tr>
-        <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></th>
+        <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></video></th>
         <th>
             <p>In progress. Plan to introduce:</p>
             <ul>
-                <li style="text-align: left;"><a href="https://benedikt-bitterli.me/restir/">ReSTIR</a></li>
-                <li style="text-align: left;"><a href="https://www.youtube.com/watch?v=2GYXuM10riw">Ridiance Cache</a></li>
-                <li style="text-align: left;"><a href="https://research.adobe.com/publication/tessellation-free-displacement-mapping-for-ray-tracing/">Displacement Mapping</a></li>
-                <li style="text-align: left;"><a href="https://dl.acm.org/doi/10.5555/3151666.3151696">Foveated Rendering</a></li>
-                <li style="text-align: left;"><a href="https://ieeexplore.ieee.org/document/9089460">Stereo Rendering</a></li>
+                <li><a href="https://benedikt-bitterli.me/restir/">ReSTIR</a></li>
+                <li><a href="https://www.youtube.com/watch?v=2GYXuM10riw">Ridiance Cache</a></li>
+                <li><a href="https://research.adobe.com/publication/tessellation-free-displacement-mapping-for-ray-tracing/">Displacement Mapping</a></li>
+                <li><a href="https://dl.acm.org/doi/10.5555/3151666.3151696">Foveated Rendering</a></li>
+                <li><a href="https://ieeexplore.ieee.org/document/9089460">Stereo Rendering</a></li>
             </ul>
         </th>
     </tr>
