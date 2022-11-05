@@ -10,13 +10,13 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 ## Selected Projects
 
-### [Nagi](https://github.com/IwakuraRein/Nagi)
+### <a href="https://github.com/IwakuraRein/Nagi"  target="_blank">Nagi</a>
 
 Nagi is a toy path tracer developed in CUDA.
 
 <img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
-Artist: [NewSee2l035](https://blendswap.com/profile/35454) 
+Artist: <a href="https://blendswap.com/profile/35454" target="_blank">NewSee2l035</a> 
 
 ### Naku
 
@@ -28,27 +28,27 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 <table style="width:95%">
     <tr>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking">Boids Flocking Simulation with CUDA</a></th>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Renderin">Grass Rendering with Vulkan</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking" target="_blank">Boids Flocking Simulation with CUDA</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Renderin" target="_blank">Grass Rendering with Vulkan</a></th>
     </tr>
     <tr>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking"><img src="./docs/projects/imgs/2.1-50000.gif" alt="Boid Flocking"/></a></th>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Rendering"><img src="./docs/projects/imgs/my_grass.gif" alt="Grass Rendering"/></a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking" target="_blank"><img src="./docs/projects/imgs/2.1-50000.gif" alt="Boid Flocking"/></a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Rendering" target="_blank"><img src="./docs/projects/imgs/my_grass.gif" alt="Grass Rendering"/></a></th>
     </tr>
     <tr>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-4-CUDA-Denoiser">Denoising Path Tracing with CUDA</a></th>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer">Real-time Ray Tracing VR Scenes with Vulkan</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-4-CUDA-Denoiser" target="_blank">Denoising Path Tracing with CUDA</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer" target="_blank">Real-time Ray Tracing VR Scenes with Vulkan</a></th>
     </tr>
     <tr>
         <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;"></video></th>
         <th>
             <p>In progress. Plan to introduce:</p>
             <ul>
-                <li><a href="https://benedikt-bitterli.me/restir/">ReSTIR</a></li>
-                <li><a href="https://www.youtube.com/watch?v=2GYXuM10riw">Ridiance Cache</a></li>
-                <li><a href="https://research.adobe.com/publication/tessellation-free-displacement-mapping-for-ray-tracing/">Displacement Mapping</a></li>
-                <li><a href="https://dl.acm.org/doi/10.5555/3151666.3151696">Foveated Rendering</a></li>
-                <li><a href="https://ieeexplore.ieee.org/document/9089460">Stereo Rendering</a></li>
+                <li><a href="https://benedikt-bitterli.me/restir/" target="_blank">ReSTIR</a></li>
+                <li><a href="https://www.youtube.com/watch?v=2GYXuM10riw" target="_blank">Ridiance Cache</a></li>
+                <li><a href="https://research.adobe.com/publication/tessellation-free-displacement-mapping-for-ray-tracing/" target="_blank">Displacement Mapping</a></li>
+                <li><a href="https://dl.acm.org/doi/10.5555/3151666.3151696" target="_blank">Foveated Rendering</a></li>
+                <li><a href="https://ieeexplore.ieee.org/document/9089460" target="_blank">Stereo Rendering</a></li>
             </ul>
         </th>
     </tr>
@@ -59,9 +59,11 @@ These are the course projects of <a href="https://cis565-fall-2022.github.io/" t
 
 ### Generating Anime Avatars
 
-![](./assets/img/avaters/Avater0.png)
+<div style="text-align: center;">
+<img src="./assets/img/avaters/Avater0.png"/>
+</div>
 
-I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater on the left.  
+I created a anime face dataset and trained a <a href="https://github.com/IwakuraRein/FastGAN-pytorch"  target="_blank">FastGan</a> model to generate the avater on the left.  
 
 ### Teleport
 
