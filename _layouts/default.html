@@ -9,6 +9,7 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+	<base target="_blank" />
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/icons/favicon.ico"> {% include head-custom.html %}
 </head>
 
@@ -19,7 +20,7 @@
                 window.onload = refreshAvater;
 
                 function refreshAvater() {
-                    var randomNum = Math.floor((Math.random() * 10));
+                    var randomNum = Math.floor((Math.random() * 13));
                     document.getElementById("avater").src = "/assets/img/avaters/Avater" + randomNum.toString() + ".png";
                     return false;
                 }
