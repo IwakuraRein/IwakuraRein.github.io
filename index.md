@@ -10,21 +10,21 @@ I am currently a Master student at [University of Pennsylvania](http://cg.cis.up
 
 ## Selected Projects
 
-### <a href="https://github.com/IwakuraRein/Nagi" target="_blank">Nagi</a>
+### [Nagi](https://github.com/IwakuraRein/Nagi)
 
 Nagi is a toy path tracer developed in CUDA.
 
 <img src="./docs/projects/imgs/nagi.png" alt="Nagi screenshot" />
 
-Artist: <a href="https://blendswap.com/profile/35454" target="_blank">NewSee2l035</a> 
+Artist: [NewSee2l035](https://blendswap.com/profile/35454)
 
-### <a href="https://github.com/IwakuraRein/Naku" target="_blank">Naku</a>
+### [Naku](https://github.com/IwakuraRein/Naku)
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 <video src="https://user-images.githubusercontent.com/28486541/200195281-3906004f-3220-4657-b108-eec6fa4fe30d.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/200195281-3906004f-3220-4657-b108-eec6fa4fe30d.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
 
-<p></p>
+<br>
 
 ### CIS 565 Course Projects
 
@@ -34,8 +34,8 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
         <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Rendering" target="_blank">Grass Rendering with Vulkan</a></th>
     </tr>
     <tr>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking" target="_blank"><img src="./docs/projects/imgs/2.1-50000.gif" alt="Boid Flocking"/></a></th>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Rendering" target="_blank"><img src="./docs/projects/imgs/my_grass.gif" alt="Grass Rendering"/></a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-1-CUDA-Flocking"><img src="./docs/projects/imgs/2.1-50000.gif" alt="Boid Flocking"/></a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-5-Vulkan-Grass-Rendering"><img src="./docs/projects/imgs/my_grass.gif" alt="Grass Rendering"/></a></th>
     </tr>
     <tr>
         <th><a href="https://github.com/IwakuraRein/CIS-565-4-CUDA-Denoiser" target="_blank">Denoising Path Tracing with CUDA</a></th>
@@ -57,7 +57,7 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 </table>
 
-These are the course projects of <a href="https://cis565-fall-2022.github.io/" target="_blank">CIS 565 - GPU Programming and Architecture</a>. In this course, I will delve into GPU architecture and learn about CUDA, WebGL, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
+These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course, I will delve into GPU architecture and learn about CUDA and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
 
 ### Generating Anime Avatars
 
@@ -65,7 +65,7 @@ These are the course projects of <a href="https://cis565-fall-2022.github.io/" t
 <img src="./assets/img/avaters/Avater0.png"/>
 </div>
 
-I created a anime face dataset and trained a <a href="https://github.com/IwakuraRein/FastGAN-pytorch"  target="_blank">FastGan</a> model to generate the avater on the left. Refresh to see more.
+I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater on the left. Refresh to see more.
 
 ### Teleport
 
@@ -89,11 +89,11 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 ## Cheat sheets
 
-* [GLSL](./docs/cheat_sheets/glsl)
+* <a href="./docs/cheat_sheets/glsl" target="_self">GLSL</a>
 
-* [GLM](./docs/cheat_sheets/glm)
+* <a href="./docs/cheat_sheets/glm" target="_self">GLM</a>
 
-* [Transformations](./docs/cheat_sheets/transforms)
+* <a href="./docs/cheat_sheets/transforms" target="_self">Transformations</a>
 
 ## Free Rendering Resources
 
@@ -136,3 +136,5 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 * [Baikal](https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRender-Baikal)
 
 * [Falcor](https://developer.nvidia.com/falcor)
+
+* [Vk Raytrace](https://github.com/nvpro-samples/vk_raytrace)
