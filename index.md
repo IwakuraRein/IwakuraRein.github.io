@@ -133,6 +133,8 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [Blender](https://blendjet.su/)
 
+* [Kajiya](https://github.com/EmbarkStudios/kajiya)
+
 * [Tungsten](https://github.com/tunabrain/tungsten)
 
 * [Baikal](https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRender-Baikal)
