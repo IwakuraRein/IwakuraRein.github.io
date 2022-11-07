@@ -119,6 +119,8 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [Free3D](https://free3d.com)
 
+* [Poliigon](https://www.poliigon.com)
+
 * [Dev Assets](https://devassets.com/)
 
 * [ORCA](https://developer.nvidia.com/orca)
