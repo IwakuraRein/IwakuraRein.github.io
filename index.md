@@ -139,7 +139,11 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [Tungsten](https://github.com/tunabrain/tungsten)
 
+* [OSPRay](https://github.com/ospray/OSPRay)
+
 * [Baikal](https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRender-Baikal)
+
+* [ChameleonRT](https://github.com/Twinklebear/ChameleonRT)
 
 * [Falcor](https://developer.nvidia.com/falcor)
 
