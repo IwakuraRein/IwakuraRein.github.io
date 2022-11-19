@@ -22,7 +22,7 @@ Artist: [NewSee2l035](https://blendswap.com/profile/35454)
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
-<video src="https://user-images.githubusercontent.com/28486541/200195281-3906004f-3220-4657-b108-eec6fa4fe30d.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/200195281-3906004f-3220-4657-b108-eec6fa4fe30d.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
+<video src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
 
 <br>
 
@@ -75,7 +75,7 @@ I created an anime face dataset and trained a [FastGan](https://github.com/Iwaku
 
 <!--<img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>-->
 
-<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
+<video src="https://user-images.githubusercontent.com/28486541/202858587-e5343e14-a313-43d4-8755-f617795ec6fe.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858587-e5343e14-a313-43d4-8755-f617795ec6fe.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
 
 In this game, we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
 
@@ -85,7 +85,7 @@ In this game, we combined the mechanism from the famous Portal game with FPS. Pl
 
 <!--<img src="./docs/projects/imgs/dog_fight_screenshot1.png" alt="Dog Fight Screenshot"/>-->
 
-<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
+<video src="https://user-images.githubusercontent.com/28486541/202858435-678eabce-0ccc-4f2e-b41d-faad4025cde4.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858435-678eabce-0ccc-4f2e-b41d-faad4025cde4.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
 
 We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a object detection model. The goal of using YOLO was to allow player to control character by waving hands in front of a webcam. This is the project for the Undergraduate Innovation and Entrepreneurship Training Program.
 
@@ -148,3 +148,4 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 * [Falcor](https://developer.nvidia.com/falcor)
 
 * [Vk Raytrace](https://github.com/nvpro-samples/vk_raytrace)
+
