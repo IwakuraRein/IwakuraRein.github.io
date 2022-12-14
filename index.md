@@ -20,7 +20,7 @@ Artist: [NewSee2l035](https://blendswap.com/profile/35454)
 
 ### [Eidola](https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer)
 
-Eidola is a **real-time** ray tracer based on Vulkan's ray tracing api and the ReSTIR algorithm. This is the final project for [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/)
+Eidola is a **real-time** ray tracer based on Vulkan's ray tracing api and the ReSTIR algorithm. This is the final project for [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/).
 
 <img src="./docs/projects/imgs/eidola.png" alt="Nagi screenshot" />
 
@@ -57,8 +57,6 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 </table>
 
 These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course, I will delve into GPU architecture, CUDA, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
-
-In the final project, we are going to implement ReSTIR(direct and indirect) with radiance cache. We also want to ray tracing on displacement map to render complex geometries. We expect to see high quality result at 90+ FPS. The renderer will be built upon [Vk Raytrace](https://github.com/nvpro-samples/vk_raytrace).
 
 ### Generating Anime Avatars
 
