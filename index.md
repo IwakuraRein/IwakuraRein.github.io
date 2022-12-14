@@ -6,7 +6,7 @@ layout: default
 
 ## About me
 
-I am currently a Master student at [University of Pennsylvania](http://cg.cis.upenn.edu/). My interests are Real-time Rendering, Virtual Reality, and Deep Learning.
+I am currently a Master's student at the [University of Pennsylvania](http://cg.cis.upenn.edu/). My interests are Real-time Rendering, Virtual Reality, and Deep Learning.
 
 ## Selected Projects
 
@@ -28,7 +28,7 @@ Eidola is a **real-time** ray tracer based on Vulkan's ray tracing api and the R
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
-<video src="https://user-images.githubusercontent.com/28486541/200195281-3906004f-3220-4657-b108-eec6fa4fe30d.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/200195281-3906004f-3220-4657-b108-eec6fa4fe30d.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
+<video src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
 
 <br>
 
@@ -56,7 +56,9 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 </table>
 
-These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course, I will delve into GPU architecture and learn about CUDA and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
+These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course, I will delve into GPU architecture, CUDA, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
+
+In the final project, we are going to implement ReSTIR(direct and indirect) with radiance cache. We also want to ray tracing on displacement map to render complex geometries. We expect to see high quality result at 90+ FPS. The renderer will be built upon [Vk Raytrace](https://github.com/nvpro-samples/vk_raytrace).
 
 ### Generating Anime Avatars
 
@@ -66,7 +68,7 @@ These are the course projects of [CIS 565 - GPU Programming and Architecture](ht
 </a>
 </div>
 
-I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
+I created an anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
 
 ### Teleport
 
@@ -74,9 +76,9 @@ I created a anime face dataset and trained a [FastGan](https://github.com/Iwakur
 
 <!--<img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>-->
 
-<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
+<video src="https://user-images.githubusercontent.com/28486541/202858587-e5343e14-a313-43d4-8755-f617795ec6fe.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858587-e5343e14-a313-43d4-8755-f617795ec6fe.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
 
-In this game we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
+In this game, we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
 
 ### Dog Fight
 
@@ -84,7 +86,7 @@ In this game we combined the mechanism from the famous Portal game with FPS. Pla
 
 <!--<img src="./docs/projects/imgs/dog_fight_screenshot1.png" alt="Dog Fight Screenshot"/>-->
 
-<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
+<video src="https://user-images.githubusercontent.com/28486541/202858435-678eabce-0ccc-4f2e-b41d-faad4025cde4.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858435-678eabce-0ccc-4f2e-b41d-faad4025cde4.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
 
 We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a object detection model. The goal of using YOLO was to allow player to control character by waving hands in front of a webcam. This is the project for the Undergraduate Innovation and Entrepreneurship Training Program.
 
@@ -138,8 +140,13 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * [Tungsten](https://github.com/tunabrain/tungsten)
 
+* [OSPRay](https://github.com/ospray/OSPRay)
+
 * [Baikal](https://github.com/GPUOpen-LibrariesAndSDKs/RadeonProRender-Baikal)
+
+* [ChameleonRT](https://github.com/Twinklebear/ChameleonRT)
 
 * [Falcor](https://developer.nvidia.com/falcor)
 
 * [Vk Raytrace](https://github.com/nvpro-samples/vk_raytrace)
+
