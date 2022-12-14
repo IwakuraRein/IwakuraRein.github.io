@@ -21,7 +21,7 @@
 
                 function refreshAvater() {
                     var randomNum = Math.floor((Math.random() * 20));
-                    document.getElementById("avater").src = "/assets/img/avaters/Avater" + randomNum.toString() + ".png";
+                    document.getElementById("anime_avater").src = "/assets/img/avaters/Avater" + randomNum.toString() + ".png";
                     return false;
                 }
             </script>
@@ -29,7 +29,7 @@
                 <h1><a href="{{ " " | absolute_url }}" target="_self">{{ site.title | default: site.github.repository_name }}</a></h1>
 
                 <!-- <a href="javascript:void(0)" onclick="refreshAvater()" target="_self"> -->
-                <img id="avater" alt="Avater" width="240" />
+                <img id="avater" src="/assets/img/avaters/Avater0.png" alt="Avater" width="240" />
                 <!-- </a> -->
 
                 <!-- <p>{{ site.description | default: site.github.project_tagline }}</p> -->

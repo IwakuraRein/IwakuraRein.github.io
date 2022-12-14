@@ -18,6 +18,12 @@ Nagi is a toy path tracer developed in CUDA.
 
 Artist: [NewSee2l035](https://blendswap.com/profile/35454)
 
+### [Eidola](https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer)
+
+Eidola is a **real-time** ray tracer based on Vulkan's ray tracing api and the ReSTIR algorithm. This is the final project for [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/)
+
+<img src="./docs/projects/imgs/eidola.png" alt="Nagi screenshot" />
+
 ### [Naku](https://github.com/IwakuraRein/Naku)
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
@@ -39,19 +45,12 @@ Naku is a toy rasterization-based renderer developed in Vulkan and C++.
     </tr>
     <tr>
         <th><a href="https://github.com/IwakuraRein/CIS-565-4-CUDA-Denoiser" target="_blank">Denoising Path Tracing with CUDA</a></th>
-        <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer" target="_blank">Real-time Ray Tracing VR Scenes with Vulkan</a></th>
+        <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer" target="_blank">Real-time Ray Tracing with Vulkan</a></th>
     </tr>
     <tr>
         <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video></th>
         <th>
-            <p>In progress. Plan to introduce:</p>
-            <ul>
-                <li><a href="https://benedikt-bitterli.me/restir/" target="_blank">ReSTIR</a></li>
-                <li><a href="https://www.youtube.com/watch?v=2GYXuM10riw" target="_blank">Ridiance Cache</a></li>
-                <li><a href="https://research.adobe.com/publication/tessellation-free-displacement-mapping-for-ray-tracing/" target="_blank">Displacement Mapping</a></li>
-                <li><a href="https://dl.acm.org/doi/10.5555/3151666.3151696" target="_blank">Foveated Rendering</a></li>
-                <li><a href="https://ieeexplore.ieee.org/document/9089460" target="_blank">Stereo Rendering</a></li>
-            </ul>
+            <img src="./docs/projects/imgs/eidola.png" alt="Vulkan Real-time Ray Tracer" />
         </th>
     </tr>
 
@@ -62,10 +61,12 @@ These are the course projects of [CIS 565 - GPU Programming and Architecture](ht
 ### Generating Anime Avatars
 
 <div style="text-align: center;">
-<img src="./assets/img/avaters/Avater0.png"/>
+<a href="javascript:void(0)" onclick="refreshAvater()" target="_self">
+<img id="anime_avater" alt="Avater" width="240" />
+</a>
 </div>
 
-I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater on the left. Refresh to see more.
+I created a anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
 
 ### Teleport
 
