@@ -16,7 +16,7 @@ TerrainIt is an authoring tool for generating mountainous terrain mesh. This is 
 
 Co-author: [Shutong Wu](https://github.com/ScriptWonder)
 
-Reference: [Argudo, Oscar, et al. "Orometry-based terrain analysis and synthesis."](https://dl.acm.org/doi/abs/10.1145/3355089.3356535)
+Reference: [Argudo, Oscar, et al. Orometry-based terrain analysis and synthesis.](https://dl.acm.org/doi/abs/10.1145/3355089.3356535)
 
 <video src="./docs/projects/media/TerrainIt.mp4" data-canonical-src="./docs/projects/media/TerrainIt.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
 
