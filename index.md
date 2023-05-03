@@ -10,6 +10,16 @@ I am currently a Master's student at the [University of Pennsylvania](http://cg.
 
 ## Selected Projects
 
+### TerrainIt
+
+TerrainIt is an authoring tool for generating mountainous terrain mesh. This is the final project of CIS 660 Advanced Topics In Computer Graphics And Animation.
+
+Co-author: [Shutong Wu](https://github.com/ScriptWonder)
+
+Reference: [Argudo, Oscar, et al. "Orometry-based terrain analysis and synthesis."](https://dl.acm.org/doi/abs/10.1145/3355089.3356535)
+
+<video src="./docs/projects/media/TerrainIt.mp4" data-canonical-src="./docs/projects/media/TerrainIt.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
+
 ### [Nagi](https://github.com/IwakuraRein/Nagi)
 
 Nagi is a toy path tracer developed in CUDA.
