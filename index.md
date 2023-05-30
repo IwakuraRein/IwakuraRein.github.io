@@ -108,6 +108,10 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 * <a href="./docs/cheat_sheets/transforms" target="_self">Transformations</a>
 
+## Game Development Resources
+
+Click <a href="./docs/game_development_resources" target="_self">here</a> to see a lot of useful resources for game development.
+
 ## Free Rendering Resources
 
 ### Scenes
