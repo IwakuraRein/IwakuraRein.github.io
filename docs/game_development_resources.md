@@ -52,3 +52,5 @@ Most of the websites listed here offer royalty-free resources for game developme
 * [Google Fonts](https://fonts.google.com/)
 * [Font Awesome](https://fontawesome.dashgame.com/)
 * [Adobe Fonts](https://fonts.adobe.com/fonts)
+
+{% endraw %}
