@@ -17,7 +17,7 @@ Most of the websites listed here offer royalty-free resources for game developme
 * [PURPLE PLANET](https://www.purple-planet.com/)
 * [Over & Out](https://www.youtube.com/channel/UCWv5wVMpry6Ehsl8Fvr0xhg)
 * [FMA](https://freemusicarchive.org/)
-* [Epidemic Sound](https://www.epidemicsound.com/sound-effects/
+* [Epidemic Sound](https://www.epidemicsound.com/sound-effects/)
 
 ## Meshes
 
