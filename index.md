@@ -6,7 +6,7 @@ layout: default
 
 ## About me
 
-I am currently a Master's student at the [University of Pennsylvania](http://cg.cis.upenn.edu/). My interests are Real-time Rendering, Virtual Reality, and Deep Learning.
+I am currently a Master's student at the [University of Pennsylvania](http://cg.cis.upenn.edu/). My interests are Real-time Rendering, Game Development, and Deep Learning.
 
 ## Selected Projects
 
