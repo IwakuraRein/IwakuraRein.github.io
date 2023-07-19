@@ -80,17 +80,7 @@ These are the course projects of [CIS 565 - GPU Programming and Architecture](ht
 
 I created an anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
 
-### Teleport
-
-<!--<video src="https://user-images.githubusercontent.com/28486541/199053796-11756267-042a-4419-823d-a4d8bf4ac0e7.mp4"></video>-->
-
-<!--<img src="./docs/projects/imgs/teleport_screenshot1.png" alt="Teleport Screenshot"/>-->
-
-<video src="https://user-images.githubusercontent.com/28486541/202858587-e5343e14-a313-43d4-8755-f617795ec6fe.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858587-e5343e14-a313-43d4-8755-f617795ec6fe.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video>
-
-In this game, we combined the mechanism from the famous Portal game with FPS. Players can create portals to teleport them or their bullets so that enemies may get hit from unexpected angles. This is the final project for the Game Design Course. 
-
-### Dog Fight
+### Hand Tracking Game
 
 <!--<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4"></video>-->
 
