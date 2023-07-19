@@ -38,7 +38,7 @@ Eidola is a **real-time** ray tracer based on Vulkan's ray tracing api and the R
 
 ### Path Tracing Denoising
 
-<imag src="./docs/projects/imgs/PosterAbstract.jpg" alt="Denoising Result" />
+<img src="./docs/projects/imgs/PosterAbstract.jpg" alt="Denoising Result" />
 
 A multi-scale convolutional neural network enhanced with a separate encoder of G-buffers. It effectively denoises extremely noisy Monte-Carlo rendering and can achieve near real-time speeds.
 
