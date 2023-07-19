@@ -10,7 +10,7 @@ I am a Master's student at the [University of Pennsylvania](http://cg.cis.upenn.
 
 ## Selected Projects
 
-### TerrainIt
+### Terrain Authoring Tool
 
 TerrainIt is an authoring tool for generating mountainous terrain mesh. This is the final project of CIS 660 Advanced Topics In Computer Graphics And Animation.
 
@@ -22,7 +22,7 @@ Reference: [Argudo, Oscar, et al. Orometry-based terrain analysis and synthesis.
 
 <br>
 
-### [Nagi](https://github.com/IwakuraRein/Nagi)
+### [Cuda Path Tracer](https://github.com/IwakuraRein/Nagi)
 
 Nagi is a toy path tracer developed in CUDA.
 
@@ -30,19 +30,17 @@ Nagi is a toy path tracer developed in CUDA.
 
 Artist: [NewSee2l035](https://blendswap.com/profile/35454)
 
-### [Eidola](https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer)
+### [Vulkan Realtime Ray Tracer](https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer)
 
 Eidola is a **real-time** ray tracer based on Vulkan's ray tracing api and the ReSTIR algorithm. This is the final project for [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/).
 
 <img src="./docs/projects/imgs/eidola.png" alt="Nagi screenshot" />
 
-### [Naku](https://github.com/IwakuraRein/Naku)
+### Path Tracing Denoising
 
-Naku is a toy rasterization-based renderer developed in Vulkan and C++.
+<imag src="./docs/projects/imgs/PosterAbstract.jpg" alt="Denoising Result">
 
-<video src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
-
-<br>
+A multi-scale convolutional neural network enhanced with a separate encoder of G-buffers. It effectively denoises extremely noisy Monte-Carlo rendering and can achieve near real-time speeds.
 
 ### CIS 565 Course Projects
 
@@ -79,6 +77,12 @@ These are the course projects of [CIS 565 - GPU Programming and Architecture](ht
 </div>
 
 I created an anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
+
+### [Vulkan Realtime Renderer](https://github.com/IwakuraRein/Naku)
+
+Naku is a toy rasterization-based renderer developed in Vulkan and C++.
+
+<video src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
 
 ### Hand Tracking Game
 
