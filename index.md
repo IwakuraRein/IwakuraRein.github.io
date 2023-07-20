@@ -66,9 +66,9 @@ A multi-scale convolutional neural network enhanced with a separate encoder of G
 
 </table>
 
-These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course, I will delve into GPU architecture, CUDA, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
+These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course I delved into GPU architecture, CUDA, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
 
-### Generating Anime Avatars
+### Generating Anime-style Avatars
 
 <div style="text-align: center;">
 <a href="javascript:void(0)" onclick="refreshAvater()" target="_self">
@@ -76,13 +76,15 @@ These are the course projects of [CIS 565 - GPU Programming and Architecture](ht
 </a>
 </div>
 
-I created an anime face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
+I created an anime-style face dataset and trained a [FastGan](https://github.com/IwakuraRein/FastGAN-pytorch) model to generate the avater above. Click to see more.
 
 ### [Vulkan Realtime Renderer](https://github.com/IwakuraRein/Naku)
 
 Naku is a toy rasterization-based renderer developed in Vulkan and C++.
 
 <video src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/202858685-5ffbc4ae-d736-40f6-94bf-79cdf4304e90.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video>
+
+<br>
 
 ### Hand Tracking Game
 
