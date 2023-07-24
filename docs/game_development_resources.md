@@ -63,18 +63,21 @@ Most of the websites listed here offer royalty-free resources for game developme
 
 ## Unity Plugins
 
+* [UltEvents](https://kybernetik.itch.io/ultevents)
 * [Odin](https://odininspector.com/)
 * [Obi](http://obi.virtualmethodstudio.com/)
+* [Magica Cloth 2](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)
 * [Entitas](https://github.com/sschmid/Entitas)
 * [Ink](https://github.com/inkle/ink-unity-integration)
 * [xLua](https://github.com/inkle/ink-unity-integration)
 * [Project Acoustics](https://www.microsoft.com/en-us/download/details.aspx?id=57346)
 * [Deform](https://github.com/keenanwoodall/Deform)
+* [Extended Transform Editor](https://github.com/keenanwoodall/ExtendedTransformEditor)
 
 ### Graphics
 
 * [Next-Gen Soft-Shadows](https://assetstore.unity.com/packages/vfx/shaders/next-gen-soft-shadows-137380)
-* [Mobile Screen Space Planar Reflection] https://github.com/ColinLeung-NiloCat/UnityURP-MobileScreenSpacePlanarReflection
+* [Mobile Screen Space Planar Reflection](https://github.com/ColinLeung-NiloCat/UnityURP-MobileScreenSpacePlanarReflection)
 * [Simple Water Shader Urp](https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449)
 
 {% endraw %}
