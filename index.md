@@ -72,7 +72,7 @@ These are the course projects of [CIS 565 - GPU Programming and Architecture](ht
 
 <div style="text-align: center;">
 <a href="javascript:void(0)" onclick="refreshAvater()" target="_self">
-<img id="anime_avater" alt="Avater" width="240" />
+<img id="anime_avater" src = "/assets/img/avaters/Avater0.png" alt="Avater" width="240" />
 </a>
 </div>
 
