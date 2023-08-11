@@ -79,5 +79,6 @@ Most of the websites listed here offer royalty-free resources for game developme
 * [Next-Gen Soft-Shadows](https://assetstore.unity.com/packages/vfx/shaders/next-gen-soft-shadows-137380)
 * [Mobile Screen Space Planar Reflection](https://github.com/ColinLeung-NiloCat/UnityURP-MobileScreenSpacePlanarReflection)
 * [Simple Water Shader Urp](https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449)
+* [Unity GPU Based Occlusion Culling](https://github.com/przemyslawzaworski/Unity-GPU-Based-Occlusion-Culling)
 
 {% endraw %}
