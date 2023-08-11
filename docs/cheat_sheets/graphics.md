@@ -12,13 +12,13 @@ tags:
 
 ![img](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Barycentric_RGB.svg/220px-Barycentric_RGB.svg.png)
 
-* $G$ is the center of mass of a triangle $\triangle ABC$. Then we can represent any coplanar point as $u \overline{GA} + v \overline{GB} + w \overline{GC}$ where $u + v + w = 1$.
-* $G = \frac{A+B+C}{3}$.
+* <img src="http://latex.codecogs.com/svg.latex?G"> is the center of mass of a triangle <img src="http://latex.codecogs.com/svg.latex?\triangle ABC">. Then we can represent any coplanar point as <img src="http://latex.codecogs.com/svg.latex?u \overline{GA} + v \overline{GB} + w \overline{GC}"> where <img src="http://latex.codecogs.com/svg.latex?u + v + w = 1">.
+* <img src="http://latex.codecogs.com/svg.latex?G = \frac{A+B+C}{3}">.
 * A barycentric coordinate equals to the area the point forms with the edge it opposes divides by the area of the triangle.
-  * $u = \frac{\|GB \times GC\|}{\|AB \times AC\|}$, $v = \frac{\|GA \times GC\|}{\|AB \times AC\|}$, $w = \frac{\|GA \times GB\|}{\|AB \times AC\|}$.
+  * <img src="http://latex.codecogs.com/svg.latex?u = \frac{\|GB \times GC\|}{\|AB \times AC\|}">, <img src="http://latex.codecogs.com/svg.latex?v = \frac{\|GA \times GC\|}{\|AB \times AC\|}">, <img src="http://latex.codecogs.com/svg.latex?w = \frac{\|GA \times GB\|}{\|AB \times AC\|}">.
 * If none of the coordinates is negative, than the point is inside the triangle.
 * Notice that when interpolating using barycentric coordinates in the screen space, we must consider the impact of depth values.
-  * $u \prime = \frac{Z_A}{Z} u$, $v \prime = \frac{Z_B}{Z} v$, $w \prime = \frac{Z_C}{Z} w$.
+  * <img src="http://latex.codecogs.com/svg.latex?u \prime = \frac{Z_A}{Z} u">, <img src="http://latex.codecogs.com/svg.latex?v \prime = \frac{Z_B}{Z} v">, <img src="http://latex.codecogs.com/svg.latex?w \prime = \frac{Z_C}{Z} w">.
 
 ## Normal Map
 
@@ -41,15 +41,15 @@ tags:
 
 ## Ray-AABB Intersection
 
-* The ray equation is: $R(t) = \begin{pmatrix} x_o \\ y_o \\ z_o \end{pmatrix} + t \begin{pmatrix} x_{dir} \\ y_{dir} \\ z_{dir} \end{pmatrix}$.
-* The minimum and maximum of the AABB is $\begin{pmatrix} x_{min} \\ y_{min} \\ z_{min} \end{pmatrix}$ and $\begin{pmatrix} x_{max} \\ y_{max} \\ z_{max} \end{pmatrix}$.
-* We can calculate out the $t$ by which the ray intersects with the AABB's minimum/maximum plane. E.g., $t_{x \_ min} = \frac{x_{min}-x_o}{x_{dir}}$.
-* The ray intersects with the AABB only when the maximum of $t_{min}$ is less than the minimum of $t_{max}$.
+* The ray equation is: <img src="http://latex.codecogs.com/svg.latex?R(t) = \begin{pmatrix} x_o \\ y_o \\ z_o \end{pmatrix} + t \begin{pmatrix} x_{dir} \\ y_{dir} \\ z_{dir} \end{pmatrix}">.
+* The minimum and maximum of the AABB is <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} x_{min} \\ y_{min} \\ z_{min} \end{pmatrix}"> and <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} x_{max} \\ y_{max} \\ z_{max} \end{pmatrix}">.
+* We can calculate out the <img src="http://latex.codecogs.com/svg.latex?t"> by which the ray intersects with the AABB's minimum/maximum plane. E.g., <img src="http://latex.codecogs.com/svg.latex?t_{x \_ min} = \frac{x_{min}-x_o}{x_{dir}}">.
+* The ray intersects with the AABB only when the maximum of <img src="http://latex.codecogs.com/svg.latex?t_{min}"> is less than the minimum of <img src="http://latex.codecogs.com/svg.latex?t_{max}">.
 
 ## Ray-Sphere Intersection
 
-* Connect the ray origin $O$ and the center $C$. Use dot production and cross production to compute the length of cathetuses.
-* Use Pythagorean theory to compute the $t$.
+* Connect the ray origin <img src="http://latex.codecogs.com/svg.latex?O"> and the center <img src="http://latex.codecogs.com/svg.latex?C">. Use dot production and cross production to compute the length of cathetuses.
+* Use Pythagorean theory to compute the <img src="http://latex.codecogs.com/svg.latex?t">.
 
 ## Ray-Box Intersection
 
@@ -57,11 +57,11 @@ tags:
 
 ## Ray-Plane Intersection
 
-* $N$ is the normal and $P_0$ is a point on the plane. $P$ is the intersection point. Then $N \cdot P P_0 = 0$
-* The ray equation is: $R = O + D * t$. Then $(O + D * t_0 - P_0) \cdot N = 0$.
-* Due to distributive law, $D \cdot N * t_0 + (O - P_0) \cdot N = 0$.
-* $t_0 = \frac{(P_0 - O) \cdot N }{D \cdot N}$.
-* The ray intersects with the plane when $t_0$ is not negtive.
+* <img src="http://latex.codecogs.com/svg.latex?N"> is the normal and <img src="http://latex.codecogs.com/svg.latex?P_0"> is a point on the plane. <img src="http://latex.codecogs.com/svg.latex?P"> is the intersection point. Then <img src="http://latex.codecogs.com/svg.latex?N \cdot P P_0 = 0">
+* The ray equation is: <img src="http://latex.codecogs.com/svg.latex?R = O + D * t">. Then <img src="http://latex.codecogs.com/svg.latex?(O + D * t_0 - P_0) \cdot N = 0">.
+* Due to distributive law, <img src="http://latex.codecogs.com/svg.latex?D \cdot N * t_0 + (O - P_0) \cdot N = 0">.
+* <img src="http://latex.codecogs.com/svg.latex?t_0 = \frac{(P_0 - O) \cdot N }{D \cdot N}">.
+* The ray intersects with the plane when <img src="http://latex.codecogs.com/svg.latex?t_0"> is not negtive.
 
 ## Ray-Triangle Intersection
 
