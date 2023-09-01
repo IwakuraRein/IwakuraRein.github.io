@@ -39,6 +39,49 @@ tags:
 * With tangent, bitangent, and normal vectors, we can construct a TBN matrix. Then read the normal values from the normal map. Then we can use the TBN matrix to transform it into world space.
 * Notice that the normal map texture must be in linear space.
 
+## Cook-Torrance BRDF
+
+<img src="http://latex.codecogs.com/svg.latex?\begin{aligned} L_O(p, \omega_o) & = \int_\Omega(k_d f_{diffuse} + k_s f_{specular})L_i(p, \omega_i) n \cdot \omega_i \mathrm{d}x \\ f_{specular} & = \frac{DFG}{4(\omega_o \cdot n)(\omega_i \cdot n)} \end{aligned}">
+
+where <img src="http://latex.codecogs.com/svg.latex?D"> is Normal Distrubution Function, <img src="http://latex.codecogs.com/svg.latex?F"> is Fresnel Term, and <img src="http://latex.codecogs.com/svg.latex?G"> is Geometry Term.
+
+### Blending
+
+- Metallic Workflow:<img src="http://latex.codecogs.com/svg.latex?\begin{aligned}k_d & = (1-\mathrm{metallic})(1-F) \\ k_s & = 1\end{aligned}">
+- Specular Workflow: TODO
+
+### Diffuse Term
+
+- Lambertian: <img src="http://latex.codecogs.com/svg.latex?\frac{c}{\pi}">
+- Oren-Nayar: TODO
+
+### Normal Distribution Function
+
+Describe the smoothness of the surface. The smoother the surface is, the more the lobe concentrates on the reflection direction.
+
+- GGX: <img src="http://latex.codecogs.com/svg.latex?\frac{\alpha ^2}{\pi ((n \cdot h)^2(\alpha^2-1)+1)^2}">
+  - <img src="http://latex.codecogs.com/svg.latex?\alpha"> is roughness.
+  - <img src="http://latex.codecogs.com/svg.latex?h"> is <img src="http://latex.codecogs.com/svg.latex?\frac{l + v}{\Vert l+v \Vert}">.
+- Beckman: TODO
+
+### Geometry Term
+
+Describe the impact of self occlusion and shadowing.
+
+- Schlick-GGX: TODO
+
+### Fresnel Term
+
+Describe the metallic of the material. The closer to the metal, the more the lobe conentratese on the gazing angle.
+
+- Schlick: <img src="http://latex.codecogs.com/svg.latex?R + (1-R)(1-h \cdot v)^5">
+  - <img src="http://latex.codecogs.com/svg.latex?R"> is the reflection coefficient.
+- Fresnel Equation: TODO
+
+## BTDF
+
+TODO
+
 ## Ray-AABB Intersection
 
 * The ray equation is: <img src="http://latex.codecogs.com/svg.latex?R(t) = \begin{pmatrix} x_o \\ y_o \\ z_o \end{pmatrix} + t \begin{pmatrix} x_{dir} \\ y_{dir} \\ z_{dir} \end{pmatrix}">.
@@ -46,14 +89,14 @@ tags:
 * We can calculate out the <img src="http://latex.codecogs.com/svg.latex?t"> by which the ray intersects with the AABB's minimum/maximum plane. E.g., <img src="http://latex.codecogs.com/svg.latex?t_{x \_ min} = \frac{x_{min}-x_o}{x_{dir}}">.
 * The ray intersects with the AABB only when the maximum of <img src="http://latex.codecogs.com/svg.latex?t_{min}"> is less than the minimum of <img src="http://latex.codecogs.com/svg.latex?t_{max}">.
 
+## Ray-Box Intersection
+
+* Transform the ray into the box's local space. Then perform the Ray-AABB intersection test.
+
 ## Ray-Sphere Intersection
 
 * Connect the ray origin <img src="http://latex.codecogs.com/svg.latex?O"> and the center <img src="http://latex.codecogs.com/svg.latex?C">. Use dot production and cross production to compute the length of cathetuses.
 * Use Pythagorean theory to compute the <img src="http://latex.codecogs.com/svg.latex?t">.
-
-## Ray-Box Intersection
-
-* Transform the ray into the box's local space. Then perform the Ray-AABB intersection test.
 
 ## Ray-Plane Intersection
 
