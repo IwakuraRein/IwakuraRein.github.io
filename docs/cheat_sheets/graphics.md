@@ -116,7 +116,10 @@ TODO
 
 ## Early-Z Testing
 
-* Without Early-Z Testing, the depth test is performed after the fragment shader. With this we can access the depth buffer in the fragment shader.
-* With Early-Z Testing, the depth test is performed before the fragment shader. With this we can reduce the cost of fragment shading.
+Without Early-Z Testing, the depth test is performed after the fragment shader. With this we can access the depth buffer in the fragment shader.
+
+With Early-Z Testing, the depth test is performed before the fragment shader. With this we can reduce the cost of fragment shading Early-Z Testing isn't a built-in feature of GPU so the user must implement it by explicitly add a pass.
+
+Another advantage of of Early-Z Testing is that we can generate the Hi-Z buffer and perform many useful culling algorithms based on it.
 
 {% endraw %}
