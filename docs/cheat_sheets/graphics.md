@@ -82,23 +82,25 @@ Describe the metallic of the material. The closer to the metal, the more the lob
 
 TODO
 
-## Ray-AABB Intersection
+## Intersection
+
+### Ray-AABB Intersection
 
 * The ray equation is: <img src="http://latex.codecogs.com/svg.latex?R(t) = \begin{pmatrix} x_o \\ y_o \\ z_o \end{pmatrix} + t \begin{pmatrix} x_{dir} \\ y_{dir} \\ z_{dir} \end{pmatrix}">.
 * The minimum and maximum of the AABB is <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} x_{min} \\ y_{min} \\ z_{min} \end{pmatrix}"> and <img src="http://latex.codecogs.com/svg.latex?\begin{pmatrix} x_{max} \\ y_{max} \\ z_{max} \end{pmatrix}">.
 * We can calculate out the <img src="http://latex.codecogs.com/svg.latex?t"> by which the ray intersects with the AABB's minimum/maximum plane. E.g., <img src="http://latex.codecogs.com/svg.latex?t_{x \_ min} = \frac{x_{min}-x_o}{x_{dir}}">.
 * The ray intersects with the AABB only when the maximum of <img src="http://latex.codecogs.com/svg.latex?t_{min}"> is less than the minimum of <img src="http://latex.codecogs.com/svg.latex?t_{max}">.
 
-## Ray-Box Intersection
+### Ray-Box Intersection
 
 * Transform the ray into the box's local space. Then perform the Ray-AABB intersection test.
 
-## Ray-Sphere Intersection
+### Ray-Sphere Intersection
 
 * Connect the ray origin <img src="http://latex.codecogs.com/svg.latex?O"> and the center <img src="http://latex.codecogs.com/svg.latex?C">. Use dot production and cross production to compute the length of cathetuses.
 * Use Pythagorean theory to compute the <img src="http://latex.codecogs.com/svg.latex?t">.
 
-## Ray-Plane Intersection
+### Ray-Plane Intersection
 
 * <img src="http://latex.codecogs.com/svg.latex?N"> is the normal and <img src="http://latex.codecogs.com/svg.latex?P_0"> is a point on the plane. <img src="http://latex.codecogs.com/svg.latex?P"> is the intersection point. Then <img src="http://latex.codecogs.com/svg.latex?N \cdot P P_0 = 0">
 * The ray equation is: <img src="http://latex.codecogs.com/svg.latex?R = O + D * t">. Then <img src="http://latex.codecogs.com/svg.latex?(O + D * t_0 - P_0) \cdot N = 0">.
@@ -106,11 +108,11 @@ TODO
 * <img src="http://latex.codecogs.com/svg.latex?t_0 = \frac{(P_0 - O) \cdot N }{D \cdot N}">.
 * The ray intersects with the plane when <img src="http://latex.codecogs.com/svg.latex?t_0"> is not negtive.
 
-## Ray-Triangle Intersection
+### Ray-Triangle Intersection
 
 * First find the intersection point between the ray and the plane of the triangle. Then determin if the point is inside the triangle. 
 
-## Ray-Disk Intersection
+### Ray-Disk Intersection
 
 * First find the intersection point between the ray and the plane of the disc. Then determin if the point is inside the disc. 
 
@@ -125,3 +127,61 @@ Notice that the fragment shader expects that there are resonable values already 
 The Directx 12 and Vulkan supports this feature by default. To enable it on OpenGL, see [OpenGL's wiki](https://www.khronos.org/opengl/wiki/Early_Fragment_Test#Explicit_specification).
 
 {% endraw %}
+
+## Noise
+
+### Useful Fade Function
+
+Rather than just using linear interpolation, we can use a fade function.
+
+- [Easing functions Cheat Sheet](https://easings.net/)
+- [Bias and Gain](http://demofox.org/biasgain.html)
+
+### Useful Random Functions
+
+- [float, small and random - 2005](https://iquilezles.org/articles/sfrand/)
+- [PCG, A Family of Better Random Number Generators](https://www.pcg-random.org/#)
+
+### [Perlin Noise](https://www.shadertoy.com/view/Md3SzB)
+
+![](img/noise.jpg)
+
+1. Given a point in 2D space, find its 4 surrounding lattice points.
+2. Assign gradient for each lattice point with random funcion.
+3. Calculate distance vector for each lattice point.
+4. Calculate influence vector for each lattice point: `influence_vector = dot(gradient_vector, distance_vector)`.
+5. Interpolate between all the influence vectors to get final value.
+
+### [Worley Noise](https://www.shadertoy.com/view/MstGRl)
+
+Also known as **Voronoi Noise**.
+
+1. Divide the space into grids.
+2. Give a point in space, find its nearest N grids and generate a random position ("cell") inside each grid.
+3. Calculate the minimum distance between the sample and its surrounding cells.
+4. Normalize the distance by dividing it with the longest possible distance.
+
+
+### Multi-Octave Noise
+
+Also known as **Fractional Brownian Motion (FBM)**
+
+In practice, we can combine sevral noise with different frequency together.
+
+Octave contributions are modulated using:
+- frequency: sample rate.
+- persistance: decay of amplitude as frequency increases.
+
+```C
+PerlinNoise2d(float x, float y) {
+  float total = 0;
+  float persisstence = 1 / 2.0f;
+
+  for (int i = 0; i < N_OCTAVES; ++i) {
+    float frequency = pow(2, i);
+    float amplitude = pow(persistence, i);
+    total += amplitude * sampleNoisei(x * frequency, y * frequency);
+  }
+  return total;
+}
+```
