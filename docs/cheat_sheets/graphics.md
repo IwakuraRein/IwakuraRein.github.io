@@ -126,8 +126,6 @@ Notice that the fragment shader expects that there are resonable values already 
 
 The Directx 12 and Vulkan supports this feature by default. To enable it on OpenGL, see [OpenGL's wiki](https://www.khronos.org/opengl/wiki/Early_Fragment_Test#Explicit_specification).
 
-{% endraw %}
-
 ## Noise
 
 ### Useful Fade Function
@@ -185,3 +183,5 @@ PerlinNoise2d(float x, float y) {
   return total;
 }
 ```
+
+{% endraw %}
