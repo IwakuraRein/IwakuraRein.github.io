@@ -126,6 +126,16 @@ Notice that the fragment shader expects that there are resonable values already 
 
 The Directx 12 and Vulkan supports this feature by default. To enable it on OpenGL, see [OpenGL's wiki](https://www.khronos.org/opengl/wiki/Early_Fragment_Test#Explicit_specification).
 
+## Surface Area Heuristic
+
+![](https://pbr-book.org/3ed-2018/Primitives_and_Intersection_Acceleration/BVH%20split%20bucketing.svg)
+
+An effective algorithm to partition primitives and build Bounding Volume Hiearchy (BVH).
+
+When computing the bounding volume for each of the primitives, we keep track of the largest distance between the centroids of two bounding volumes. Then, we perform the Surface Area Heuristic algorithm to determine the axis at which the largest distance occurs. 
+
+We divide the distance range into multiple buckets (e.g., 32). Then, we attempt to partition at each boundary of the bucket and select the boundary with the lowest cost. The cost is calculated as the ratio between the two surface areas of the combined bounding volumes after the partition.
+
 ## Noise
 
 ### Useful Fade Function
