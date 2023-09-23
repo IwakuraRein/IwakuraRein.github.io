@@ -138,6 +138,8 @@ We divide the distance range into multiple buckets (e.g., 32). Then, we attempt 
 
 ## Noise
 
+See also: [GLSL Noise Algorithms](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83).
+
 ### Useful Fade Function
 
 Rather than just using linear interpolation, we can use a fade function.
