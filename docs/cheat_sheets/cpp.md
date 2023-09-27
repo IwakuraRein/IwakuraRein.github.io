@@ -8,6 +8,21 @@ tags:
 ---
 {% raw %}
 
+## TOC
+
+|  |  |
+| -------- | ------- |
+| <a href="#reduce", target="_self"><code>std::reduce</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/reduce) |
+| <a href="#max_element", target="_self"><code>std::max_element</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/max_element) |
+| <a href="#upper_bound", target="_self"><code>std::upper_bound</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/upper_bound) |
+| <a href="#lower_bound", target="_self"><code>std::lower_bound</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/lower_bound) |
+| <a href="#equal_range", target="_self"><code>std::equal_range</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/equal_range) |
+
+## Miscellaneous
+
+- `calloc` takes two arguments and initializes the allocated memory block to zero: `int *arr = (int*)calloc(n, sizeof(int));`
+- 
+
 ## STL
 
 <a name="reduce"></a>
@@ -21,19 +36,8 @@ tags:
 <a name="upper_bound"></a>
 <a name="lower_bound"></a>
 <a name="equal_range"></a>
-- Binary search: [`std::lower_bound`](https://en.cppreference.com/w/cpp/algorithm/lower_bound), [`std::upper_bound`](https://en.cppreference.com/w/cpp/algorithm/upper_bound) or [`std::equal_range`](https://en.cppreference.com/w/cpp/algorithm/equal_range). `lower_bound` and `upper_bound` return the iterator. `equal_range` returns a pair of iterators.
-  - Python equivalent to `lower_bound`: `container.index(x)`.
-  - Python equivalent to `equal_range`: `[i for i in container if x == i]`.
-  - or use the module `bisect`: `lower_bound = bisect.bisect_left(container, x); upper_bound = bisect.bisect_right(container, x)`
-
-## TOC
-
-|  |  |
-| -------- | ------- |
-| [`std::reduce`](#reduce) | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/reduce) |
-| [`std::max_element`]() | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/max_element) |
-| [`std::upper_bound`]() | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/upper_bound) |
-| [`std::lower_bound`]() | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/lower_bound) |
-| [`std::equal_range`]() | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/equal_range) |
+- Binary search: [`std::lower_bound`](https://en.cppreference.com/w/cpp/algorithm/lower_bound), [`std::upper_bound`](https://en.cppreference.com/w/cpp/algorithm/upper_bound) or [`std::equal_range`](https://en.cppreference.com/w/cpp/algorithm/equal_range). The container must be sorted. <br>`lower_bound` and `upper_bound` return the iterator. `equal_range` returns a pair of iterators. <br>`lower_bound` returns the first element that **not less** than the query and `upper_bound` returns the first element that **greater** than the query.
+  - Python equivalent: `lower_bound = bisect.bisect_left(container, x); upper_bound = bisect.bisect_right(container, x)`
+  - To get all the elements in a range: `[i for i in container if x >= a && x <= b]`
 
 {% endraw %}
