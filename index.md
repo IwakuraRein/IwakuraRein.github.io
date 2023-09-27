@@ -98,6 +98,8 @@ We made a shoot’em up game in C++ and OpenGL. Also, we used YOLO v3 to train a
 
 ## Cheat sheets
 
+* <a href="./docs/cheat_sheets/cpp" target="_self">C++</a>
+
 * <a href="./docs/cheat_sheets/transforms" target="_self">Transformations</a>
 
 * <a href="./docs/cheat_sheets/graphics" target="_self">Computer Graphics</a>
