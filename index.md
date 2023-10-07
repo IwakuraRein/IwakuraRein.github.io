@@ -6,7 +6,7 @@ layout: default
 
 ## About me
 
-<center><img src="./assets/img/jelly.gif" alt="Jellyfish" width="250"/><br>A Jelly Fish Made In Houdini</center>
+<center><img src="./assets/img/jelly.gif" alt="Jellyfish" width="250"/><br>A Jellyfish Made In Houdini</center>
 
 I am a Master's student at the [University of Pennsylvania](http://cg.cis.upenn.edu/) and currently doing an internship at [Thunder Fire Studio, Netease Game](https://leihuo.163.com/en/). My interests are Real-time Rendering, Game Development, and Deep Learning.
 
