@@ -6,6 +6,8 @@ layout: default
 
 ## About me
 
+<center><img src="./assets/img/jelly.gif" alt="Jellyfish"/><br>A Jelly Fish Made In Houdini</center>
+
 I am a Master's student at the [University of Pennsylvania](http://cg.cis.upenn.edu/) and currently doing an internship at [Thunder Fire Studio, Netease Game](https://leihuo.163.com/en/). My interests are Real-time Rendering, Game Development, and Deep Learning.
 
 ## Selected Projects
@@ -67,6 +69,20 @@ A multi-scale convolutional neural network enhanced with a separate encoder of G
 </table>
 
 These are the course projects of [CIS 565 - GPU Programming and Architecture](https://cis565-fall-2022.github.io/). In this course I delved into GPU architecture, CUDA, and Vulkan. Its six non-trivial projects will further develop my C++ programming skills.
+
+<!-- ### CIS 566 Procedual Computer Graphics Projects
+
+<table style="width:95%">
+    <tr>
+        <th><a href="https://thecger.com/CIS-566-hw01-fireball/" target="_blank">Procedual Fire Ball</a></th>
+        <th>Houdini Jellyfish</th>
+    </tr>
+    <tr>
+        <th><a href="https://thecger.com/CIS-566-hw01-fireball/"><img src="https://github.com/IwakuraRein/CIS-566-hw01-fireball/raw/master/result1.gif" alt="Fireball"/></a></th>
+        <th><img src="./assets/img/jelly.gif" alt="Jellyfish"/></th>
+    </tr>
+
+</table> -->
 
 ### Generating Anime-style Avatars
 
