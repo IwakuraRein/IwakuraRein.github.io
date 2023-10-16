@@ -11,6 +11,29 @@
     <![endif]-->
 	<base target="_blank" />
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/icons/favicon.ico"> {% include head-custom.html %}
+    <style>
+        .portfolio-list {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .portfolio-list ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .portfolio-list li {
+            margin: 0 10px; /* 控制列表项之间的间距 */
+        }
+        .highlighted {
+            padding:3px;
+            background: #eee;
+            /* border: 2px solid #0074d9; */
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -63,6 +86,19 @@
                     </td>
                 </tr>
             </table>
+            <ul id="toc">
+                <li><a href="#about-me" target="_self">About Me</a></li>
+                <li>
+                    <a href="#portfolio" target="_self">Portfolio</a>
+                    <ul>
+                        <li onclick="toggleProject(1)"><a href="#portfolio" target="_self">(Technical) Art</a></li>
+                        <li onclick="toggleProject(2)"><a href="#portfolio" target="_self">Computer Graphics</a></li>
+                        <li onclick="toggleProject(3)"><a href="#portfolio" target="_self">Machine Learning</a></li>
+                        <li onclick="toggleProject(4)"><a href="#portfolio" target="_self">Games</a></li>
+                    </ul>
+                </li>
+                <li><a href="#memos" target="_self">Memos</a></li>
+            </ul>
         </header>
         <section>
 
@@ -74,6 +110,25 @@
             <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
             {% endif %}-->
             <p align="center"><small>Hosted on GitHub Pages</small></p>
+            
+            <script type="text/javascript">
+                function toggleProject(divNumber) {
+                    // 隐藏所有的 div 元素
+                    for (let i = 1; i <= 4; i++) {
+                        if (i == divNumber) continue;
+                        div = document.getElementById('project' + i);
+                        li = document.getElementById('projectBtn' + i);
+                        if (li.classList.contains('highlighted')) li.classList.remove('highlighted');
+                        div.style.display = 'none';
+                    }
+
+                    // 显示被点击的 div 元素
+                    clickedDiv = document.getElementById('project' + divNumber);
+                    clickedDiv.style.display = 'block';
+                    clickedLi = document.getElementById('projectBtn' + divNumber);
+                    clickedLi.classList.add('highlighted');
+                }
+            </script>
         </footer>
     </div>
     <script src="{{ " /assets/js/scale.fix.js " | relative_url }}"></script>
