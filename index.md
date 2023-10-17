@@ -4,7 +4,9 @@ layout: default
 
 <h1 id="about-me" align="center"> About Me </h1><hr>
 
-<p>I am a Master's student at the <a href="http://cg.cis.upenn.edu/">University of Pennsylvania</a> and currently doing an internship at <a href="https://leihuo.163.com/en/">Thunder Fire Studio, Netease Game</a>. My interests are Real-time Rendering, Game Development, and Deep Learning.</p>
+I did an internship at <a href="https://leihuo.163.com/en/">Thunder Fire Studio, Netease Game</a>, with a focus on Unity development.
+
+I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of Pennsylvania</a> with a passion for real-time rendering, game development, and deep learning. During my intern at <a href="https://leihuo.163.com/en/">Thunder Fire Studio, Netease Game</a>, I participated in the Project Mugen with a focus on Unity development.
 
 <h1 id="portfolio" align="center"> Portfolio </h1>
 
@@ -21,7 +23,7 @@ layout: default
 
 <h2>Terrain Authoring Tool</h2>
 
-<video src="./docs/projects/media/TerrainIt.mp4" data-canonical-src="./docs/projects/media/TerrainIt.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" autoplay="autoplay" loop="loop"></video><br>
+<video src="./docs/projects/media/TerrainIt.mp4#t=10" data-canonical-src="./docs/projects/media/TerrainIt.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" start="10"  autoplay="autoplay" loop="loop"></video><br>
 
 <p>TerrainIt is an authoring tool for generating mountainous terrain mesh. This is the final project of CIS 660 Advanced Topics In Computer Graphics And Animation.</p>
 
@@ -57,7 +59,7 @@ layout: default
 
 <p>A <b>real-time</b> ray tracer based on Vulkan's ray tracing api and the ReSTIR algorithm. This is the final project for <a href="https://cis565-fall-2022.github.io/">CIS 565 - GPU Programming and Architecture</a>.</p>
 
-<img src="./docs/projects/imgs/eidola.png" alt="Nagi screenshot" /><br>
+<img src="./docs/projects/imgs/eidola.png" alt="Nagi screenshot" /><br><br>
 
 <h2>CIS 565 Course Projects</h2>
 
@@ -75,7 +77,7 @@ layout: default
         <th><a href="https://github.com/IwakuraRein/CIS-565-Final-VR-Raytracer" target="_blank">Real-time Ray Tracing with Vulkan</a></th>
     </tr>
     <tr>
-        <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" autoplay="autoplay" draggable="false" loop="loop"></video></th>
+        <th><video src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" data-canonical-src="https://user-images.githubusercontent.com/28486541/196747599-32b3307a-4af8-43af-bf47-4a27321f0234.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:90%;" autoplay="autoplay" draggable="false" loop="loop"></video></th>
         <th>
             <img src="./docs/projects/imgs/eidola.png" alt="Vulkan Real-time Ray Tracer" />
         </th>
@@ -129,9 +131,10 @@ A multi-scale convolutional neural network enhanced with a separate encoder of G
 
 <div id="project4" style="display: none;"><hr>
 
-<h2>Mingle</h2>
+<h2><a href="https://dw218192.itch.io/mingle">Mingle</a></h2>
 
-<a href="https://dw218192.itch.io/mingle"><img src="./assets/img/mingle.png"/></a>
+<img src="./assets/img/mingle.png" width="90%"/>
+<img src="./assets/img/mingle2.png" width="90%"/>
 
 <p>A platform game demo developed with Unity in the CIGA Game Jam 2023 within 48 hours.</p>
 
