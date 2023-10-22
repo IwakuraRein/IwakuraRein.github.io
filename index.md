@@ -31,6 +31,10 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 <p>Reference: <a href="https://dl.acm.org/doi/abs/10.1145/3355089.3356535">Argudo, Oscar, et al. Orometry-based terrain analysis and synthesis</a></p>
 
+<h2> Lego-ify with Houdini </h2>
+<!-- <img src="./assets/img/lego_duck.png" alt="lego-duck"/> -->
+<video src="./docs/projects/media/lego.mp4#t=10" data-canonical-src="./docs/projects/media/lego.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-width:95%;" draggable="false" start="10"  autoplay="autoplay" loop="loop"></video><br>
+
 <h2>Jellyfish with Houdini</h2>
 
 <!-- <center><img src="./assets/img/jelly.gif" alt="Jellyfish" width="250"/></center> -->
