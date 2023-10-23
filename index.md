@@ -122,6 +122,12 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 <p>A platform game demo developed with Unity in the CIGA Game Jam 2023 within 48 hours.</p>
 
+<h2>Teleport</h2>
+
+<img src="./docs/projects/imgs/teleport2.png" width="90%"/>
+
+<p>A FPS demo allowing players to place portals and fire bullets through them.</p>
+
 <h2>Hand Tracking Game</h2>
 
 <!--<video src="https://user-images.githubusercontent.com/28486541/199054465-aa822684-c3df-43f9-91fd-1effa06766c5.mp4"></video>-->
