@@ -22,7 +22,8 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 <h2>Maya Terrain Authoring Tool</h2>
 
-<video src="https://IwakuraRein.github.io/docs/projects/media/TerrainIt.mp4" data-canonical-src="https://IwakuraRein.github.io/docs/projects/media/TerrainIt.mp4" controls="controls" autoplay = "autoplay" muted="muted" loop="loop" class="d-block rounded-bottom-2 border-top width-fit" start="10" style="width:100%"></video>
+<video src="https://user-images.githubusercontent.com/28486541/280823292-7fbc4cfc-17c3-4752-a98c-fced603037b4.mp4" data-canonical-src="
+https://user-images.githubusercontent.com/28486541/280823292-7fbc4cfc-17c3-4752-a98c-fced603037b4.mp4" controls="controls" autoplay = "autoplay" muted="muted" loop="loop" class="d-block rounded-bottom-2 border-top width-fit" start="10" style="width:100%"></video>
 
 <p>TerrainIt is an authoring tool for generating mountainous terrain mesh.</p>
 
