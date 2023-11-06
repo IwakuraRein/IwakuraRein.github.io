@@ -14,7 +14,12 @@ TODO
 
 ## Wave Function Collapse
 
-TODO
+![](https://raw.githubusercontent.com/mxgmn/WaveFunctionCollapse/master/images/wfc.gif)
+
+- Gridify the space. Populate it with the initial values.
+- Iterate the empty cells and record the possible values that can be put in each. The number of the viable values for a grid is defined as its entropy.
+- Iterate the grid with the minimum postive entropies and select one value to fill in.
+- Keep looping until all entropy is non-postive.
 
 ## Noise
 

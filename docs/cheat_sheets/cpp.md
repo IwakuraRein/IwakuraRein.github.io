@@ -79,6 +79,9 @@ tags:
 | <a href="#equal_range" target="_self"><code>std::equal_range</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/equal_range) | [CPlusPlus.com](https://cplusplus.com/reference/algorithm/equal_range/) |
 | <a href="#reverse" target="_self"><code>std::reverse</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/reverse) | [CPlusPlus.com](https://cplusplus.com/reference/algorithm/reverse/) |
 | <a href="#partition" target="_self"><code>std::partition</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/partition) | [CPlusPlus.com](https://cplusplus.com/reference/algorithm/partition/) |
+| <a href="#make_heap" target="_self"><code>std::make_heap</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/make_heap) | [CPlusPlus.com](https://cplusplus.com/reference/algorithm/make_heap/) |
+| <a href="#pop_heap" target="_self"><code>std::pop_heap</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/pop_heap) | [CPlusPlus.com](https://cplusplus.com/reference/algorithm/pop_heap/) |
+| <a href="#push_heap" target="_self"><code>std::push_heap</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/algorithm/push_heap) | [CPlusPlus.com](https://cplusplus.com/reference/algorithm/push_heap/) |
 
 <a name="reduce"></a>
 - To sum: `reduce(container.begin(), container.end)`.
@@ -97,9 +100,15 @@ tags:
 <a name="reverse"></a>
 - To reverse: `reverse(container.begin(), container.end())`.
   - Python equivalent: `container[::-1]`
-<a name="reverse"></a>
+<a name="partition"></a>
 - `partition(firstIt, secondIt, unaryPredicate)` can divide the container into two groupds: those for which the predicate returns true and those for which it returns false. It returns the iterator to the first element of the second group. An good example of `partition` is Quick Sort.
   -  Python equivalent: there isn't one.
+<a name="make_heap"></a>
+- `make_heap(container.begin(), container.end())`. Directly constructs a heap. The first element is the top.
+<a name="push_heap"></a>
+- `push_heap(container.begin(), container.end())`. Only effective when the container is already a heap except for its last element. You want to insert a new element into the tail of the container and call `push_heap`.
+<a name="pop_heap"></a>
+- `pop_heap(container.begin(), container.end())`. Only effective when the container is already a heap. The top will be swapped to the last element. `[begin, end)` is still a heap.
 
 ## Algorithms
 

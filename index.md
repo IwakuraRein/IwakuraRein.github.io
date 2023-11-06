@@ -14,8 +14,9 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
     <ul>
         <li id="projectBtn1" onclick="toggleProject(1)" class="highlighted">(Technical) Art</li>
         <li id="projectBtn2" onclick="toggleProject(2)">Computer Graphics</li>
-        <li id="projectBtn4" onclick="toggleProject(4)">Games</li>
-        <li id="projectBtn3" onclick="toggleProject(3)">Machine Learning</li>
+        <li id="projectBtn3" onclick="toggleProject(3)">Games</li>
+        <li id="projectBtn4" onclick="toggleProject(4)">Machine Learning</li>
+        <li id="projectBtn5" onclick="toggleProject(5)">Other Projects</li>
     </ul>
 </div>
 
@@ -113,7 +114,7 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 </div>
 
-<div id="project4" style="display: none;"><hr>
+<div id="project3" style="display: none;"><hr>
 
 <h2><a href="https://dw218192.itch.io/mingle">Mingle</a></h2>
 
@@ -140,7 +141,7 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 </div>
 
-<div id="project3" style="display: none;"><hr>
+<div id="project4" style="display: none;"><hr>
 
 <h2>Path Tracing Denoising</h2>
 
@@ -173,4 +174,28 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 <p>I created an anime-style face dataset and trained a <a href="https://github.com/IwakuraRein/FastGAN-pytorch">FastGan</a> model to generate the avater above. Click to see more.</p>
 
+<h2>Custom PyTorch Operators</h2>
+
+<img src="https://github.com/IwakuraRein/Image-Warp-PyTorch/raw/main/README/Image_warp.svg"/>
+
+<img src="https://github.com/IwakuraRein/KernelFilter-PyTorch/raw/main/3x3_kernel_filter.svg"/>
+
+<p>I used CUDA  to develop an Image Warp operator and a Kernel Filter operator for PyTorch, both of which support backpropagation.</p>
+
 </div>
+
+<div id="project5" style="display: none;"><hr>
+
+<h2><a href="https://github.com/IwakuraRein/Discord-ChatBot">Discord Chatbot</a></h2>
+
+<img src="https://github.com/IwakuraRein/Discord-ChatBot/raw/main/doc/chat.png"/>
+
+<p>This is a Discord Chatbot I created using OpenAI's API. You can chat with it and ask it to generate an image.</p>
+
+<h2><a href="https://github.com/IwakuraRein/Anki-Tango-master">Anki Tango Master</a></h2>
+
+<div style="text-align: center;">
+<img src="https://github.com/IwakuraRein/Anki-Tango-master/raw/master/README/%E6%88%AA%E5%9B%BE.png" width="320"/>
+</div>
+
+<p>To help me build Japanese vocabulary, I wrote this Python program that parses a Japanese dictionary and generate HTML word cards that can be imported into <a href="https://apps.ankiweb.net/">Anki.</a></p>
