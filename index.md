@@ -162,7 +162,7 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
     </li>
 </ul>
 
-<h2>Generating Anime-style Avatars</h2>
+<h2><a href="./docs/projects/avatar_gen">Generating Anime-style Avatars</a></h2>
 
 <div style="text-align: center;">
 <a href="javascript:void(0)" onclick="refreshAvater()" target="_self">
