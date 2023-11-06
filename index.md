@@ -4,8 +4,6 @@ layout: default
 
 <h1 id="about-me" align="center"> About Me </h1><hr>
 
-I did an internship at <a href="https://leihuo.163.com/en/">Thunder Fire Studio, Netease Game</a>, with a focus on Unity development.
-
 I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of Pennsylvania</a> with a passion for real-time rendering, game development, and deep learning. During my intern at <a href="https://leihuo.163.com/en/">Thunder Fire Studio, Netease Game</a>, I participated in the Project Mugen with a focus on Unity development.
 
 <h1 id="portfolio" align="center"> Portfolio </h1>
