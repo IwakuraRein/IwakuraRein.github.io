@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Game Development Resources
+title: Generate Anime Avatars
 ---
 
 {% raw %}
