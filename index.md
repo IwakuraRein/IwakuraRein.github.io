@@ -180,7 +180,7 @@ I'm a Master's student at the <a href="http://cg.cis.upenn.edu/">University of P
 
 <img src="https://github.com/IwakuraRein/KernelFilter-PyTorch/raw/main/3x3_kernel_filter.svg"/>
 
-<p>I used CUDA  to develop an Image Warp operator and a Kernel Filter operator for PyTorch, both of which support backpropagation.</p>
+<p>I used CUDA  to develop an <a href="https://github.com/IwakuraRein/Image-Warp-PyTorch">Image Warp</a> operator and a <a href="https://github.com/IwakuraRein/KernelFilter-PyTorch">Kernel Filter</a> operator for PyTorch, both of which support backpropagation.</p>
 
 </div>
 
