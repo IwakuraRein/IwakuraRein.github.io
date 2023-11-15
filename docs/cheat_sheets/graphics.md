@@ -20,9 +20,17 @@ tags:
 * Notice that when interpolating using barycentric coordinates in the screen space, we must consider the impact of depth values.
   * <img src="http://latex.codecogs.com/svg.latex?u \prime = \frac{Z_A}{Z} u">, <img src="http://latex.codecogs.com/svg.latex?v \prime = \frac{Z_B}{Z} v">, <img src="http://latex.codecogs.com/svg.latex?w \prime = \frac{Z_C}{Z} w">.
 
+## MSAA
+
+![](https://pic3.zhimg.com/80/v2-c27b1744269105ae5c60a879f463cf66_720w.webp)
+
+After enabling MSAA N, the cost for frament shading remains unchanged; the cost for rasterizaion is N times more; the memory cost also increases.
+
+Is MSAA compatible with Early-Z Testing?
+
 ## Normal Map
 
-![img](https://learnopengl.com/img/advanced-lighting/normal_mapping_tbn_vectors.png)
+![](https://learnopengl.com/img/advanced-lighting/normal_mapping_tbn_vectors.png)
 
 * The values stored in the normal map are in the tangent space, between 0 and 1. It uses two channels for bitangent value and tangent values (the normal value can be retrieved based on the way how we do normalization):
   * ```cpp
@@ -120,11 +128,11 @@ TODO
 
 With Early-Z Testing, the depth test is performed before the fragment shader and the fragments that fail to pass the test will be discarded. With this we can reduce the cost of fragment shading.
 
-Another advantage of of Early-Z Testing is that we can generate the Hi-Z buffer and perform many useful culling algorithms based on it.
-
-Notice that the fragment shader expects that there are resonable values already in the depth buffer to perform the Early-Z Testing so the user needs to add a explicit early depth pass to fill the depth buffer.
-
 The Directx 12 and Vulkan supports this feature by default. To enable it on OpenGL, see [OpenGL's wiki](https://www.khronos.org/opengl/wiki/Early_Fragment_Test#Explicit_specification).
+
+### Depth Prepass
+
+Also we can add an explicit depth prepass.
 
 ## Surface Area Heuristic
 
