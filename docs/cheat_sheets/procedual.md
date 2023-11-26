@@ -23,8 +23,6 @@ TODO
 
 ## Noise
 
-See also: [GLSL Noise Algorithms](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83).
-
 ### Useful Fade Function
 
 Rather than just using linear interpolation, we can use a fade function.
@@ -34,6 +32,7 @@ Rather than just using linear interpolation, we can use a fade function.
 
 ### Useful Random Functions
 
+- [GLSL Noise Algorithms](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83).
 - [float, small and random - 2005](https://iquilezles.org/articles/sfrand/)
 - [PCG, A Family of Better Random Number Generators](https://www.pcg-random.org/#)
 - [Hash Without Sine](https://www.shadertoy.com/view/4djSRW)
