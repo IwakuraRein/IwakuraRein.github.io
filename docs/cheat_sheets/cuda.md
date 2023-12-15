@@ -47,7 +47,7 @@ tags:
     ```cpp
     int lock = 0;
     while (atomicCAS(&lock, 0, 1) == 1) // try to lock it
-      continue；
+      continue;
     ```
 - The functions below all return the original value of the address: 
   - `int atomicAdd(int* address, int val)`
@@ -86,28 +86,28 @@ tags:
 
 - We can use shared memory to improve data localization:
   ```cpp
-  __global__ void MatMulKernel(const float* devM, const float* devN, float* devP, const int width)
+  __global__ void MatMulKernel(const float* devM, const float* devN, float* devP, const int width)
   {
     __shared__ float sM[TILE_WIDTH][TILE_WIDTH];
     __shared__ float sN[TILE_WIDTH][TILE_WIDTH];
     
-    int bx = blockIdx.x; 	int by = blockIdx.y;
-    int tx = threadIdx.x;	int ty = threadIdx.y;
+    int bx = blockIdx.x; 	int by = blockIdx.y;
+    int tx = threadIdx.x;	int ty = threadIdx.y;
     
-    int col = bx * TILE_WIDTH + tx;
-    int row = by * TILE_WIDTH + ty;
+    int col = bx * TILE_WIDTH + tx;
+    int row = by * TILE_WIDTH + ty;
     
-    // Initialize accumulator to 0
-    float pValue = 0;
+    // Initialize accumulator to 0
+    float pValue = 0;
     
-    // Multiply and add
-    for (int m = 0; m < width / TILE_WIDTH; m++) {
+    // Multiply and add
+    for (int m = 0; m < width / TILE_WIDTH; m++) {
       sM[ty][tx] = devM[row * width + (m * TILE_WIDTH + tx)];
       sN[ty][tx] = devN[col + (m * TILE_WIDTH + ty) * Width];
       __syncthreads();
     
       for (int k = 0; k < TILE_WIDTH; ++k)
-          Pvalue += sM[ty][k] * sN[k][tx];
+          Pvalue += sM[ty][k] * sN[k][tx];
       __synchthreads(); // don't forget this line. writing shared memories ahead.
     }
     devP[row * width + col] = pValue;
@@ -137,7 +137,16 @@ if (tId == 0) output[bId] = partialSum[0];
 
 ## Stream Compaction
 
+1. Create a mask array.
+2. Do exclusive scan on the mask array.
+    ![](img/stream_compaction.png)
+3. The exclusive scan result is the indices of the stream compaction result.
+
 ## Radix Sort
+
+Perform stream compaction for each radix:
+
+![](img/radix_sort.png)
 
 ## See also:
 - [Thrust](https://thrust.github.io/)

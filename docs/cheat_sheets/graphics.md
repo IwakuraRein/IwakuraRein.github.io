@@ -8,6 +8,10 @@ tags:
 ---
 {% raw %}
 
+## Photometry
+
+![](img/Photometry.png)
+
 ## Barycentric coordinates
 
 ![img](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Barycentric_RGB.svg/220px-Barycentric_RGB.svg.png)
@@ -70,7 +74,7 @@ Describe the smoothness of the surface. The smoother the surface is, the more th
 - GGX: <img src="http://latex.codecogs.com/svg.latex?\frac{\alpha ^2}{\pi ((n \cdot h)^2(\alpha^2-1)+1)^2}">
   - <img src="http://latex.codecogs.com/svg.latex?\alpha"> is roughness.
   - <img src="http://latex.codecogs.com/svg.latex?h"> is <img src="http://latex.codecogs.com/svg.latex?\frac{l + v}{\Vert l+v \Vert}">.
-- Beckman: TODO
+- Beckman: <img src="http://latex.codecogs.com/svg.latex?\frac {\exp \left (-\frac {\tan ^2 \theta_h}{\alpha ^ 2} \right )}{\pi \alpha^2 \cos ^4 \theta_h}">
 
 ### Geometry Term
 
@@ -89,6 +93,57 @@ Describe the metallic of the material. The closer to the metal, the more the lob
 ## BTDF
 
 TODO
+
+## Summed Area Table (SAT)
+
+![](img/sat.png)
+
+Used for approximating depth of field or glossy reflection.
+
+We can do one inclusive scan for row and one inclusive scan for column to get SAT.
+
+## Image Based Lighting (IBL)
+
+Based on Cook-Torrance, use <img src="http://latex.codecogs.com/svg.latex?\mathrm{Irridiance} \cdot \int k_d f_{diffuse} \cos \theta _i \mathrm{d}\omega _i + \int k_s L_i f_{specular} \cos \theta _i \mathrm{d}\omega _i"> to approximate <img src="http://latex.codecogs.com/svg.latex?\int L_i \cdot f_r \cos \theta _i \mathrm{d}\omega _i">.
+
+Apparently the diffuse term is <img src="http://latex.codecogs.com/svg.latex?\frac{\mathrm{Irridiance} \cdot c}{\pi}">. We can pre-bake the irridiance map:
+
+![](img/tex_irradiance_cube.png)
+
+To querry the map, sample along the reflection angle.
+
+Then, use <img src="http://latex.codecogs.com/svg.latex?\mathrm{Radiance} \int f_{specular} \cos \theta _i \mathrm{d}\omega _i"> to approximate the specular term (<img src="http://latex.codecogs.com/svg.latex?k_s"> is 1).
+
+Pre-baked radiance mipmap:
+
+![](img/radiance_map.png)
+  - Left: 0 roughness
+  - Right: 1 roughness
+
+Pre-baked BRDF LUT:
+
+![](img/lut.png)
+
+Since Fresnel term is subjected to view angle (Schlick's approximation), the BRDF LUT has a roughness dimension and a <img src="http://latex.codecogs.com/svg.latex?\cos \theta_v"> direction.
+
+Codes:
+
+```c
+vec3 getIBLContribution(PBRInfo pbrInputs, vec3 n, vec3 reflection)
+{
+	float lod = (pbrInputs.perceptualRoughness * uboParams.prefilteredCubeMipLevels);
+	// retrieve a scale and bias to F0. See [1], Figure 3
+	vec3 brdf = (texture(samplerBRDFLUT, vec2(pbrInputs.NdotV, 1.0 - pbrInputs.perceptualRoughness))).rgb;
+	vec3 diffuseLight = SRGBtoLINEAR(tonemap(texture(samplerIrradiance, n))).rgb;
+
+	vec3 specularLight = SRGBtoLINEAR(tonemap(textureLod(prefilteredMap, reflection, lod))).rgb;
+
+	vec3 diffuse = diffuseLight * pbrInputs.diffuseColor;
+	vec3 specular = specularLight * (pbrInputs.specularColor * brdf.x + brdf.y);
+
+	return diffuse + specular;
+}
+```
 
 ## Intersection
 
