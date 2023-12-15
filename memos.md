@@ -7,6 +7,8 @@
 <ul>
 <li><a href="./docs/game_development_resources" target="_self">Game Development Resources</a></li>
 
+<li><a href="./docs/cheat_sheets/cuda" target="_self">CUDA</a></li>
+
 <li><a href="./docs/cheat_sheets/cpp" target="_self">C++</a></li>
 
 <li><a href="./docs/cheat_sheets/transforms" target="_self">Transformations</a></li>
