@@ -8,6 +8,10 @@ tags:
 ---
 {% raw %}
 
+## Pipeline
+
+![](https://vulkan-tutorial.com/images/vulkan_simplified_pipeline.svg)
+
 ## Photometry
 
 ![](img/Photometry.png)
@@ -24,13 +28,37 @@ tags:
 * Notice that when interpolating using barycentric coordinates in the screen space, we must consider the impact of depth values.
   * <img src="http://latex.codecogs.com/svg.latex?u \prime = \frac{Z_A}{Z} u">, <img src="http://latex.codecogs.com/svg.latex?v \prime = \frac{Z_B}{Z} v">, <img src="http://latex.codecogs.com/svg.latex?w \prime = \frac{Z_C}{Z} w">.
 
+## Spherical Harmonics
+
+![](img/Sphericalfunctions.svg.png)
+
+Spherical Harmonics are a set of 2D basis functions <img src="http://latex.codecogs.com/svg.latex?B_i(\omega)"> defined on the **sphere**.
+
+The functions on a sphere can be projected into Spherical Harmonics: <img src="http://latex.codecogs.com/svg.latex?f(x) \approx \sum l_i B_i (x)">, where <img src="http://latex.codecogs.com/svg.latex?l_i"> is the coefficent and <img src="http://latex.codecogs.com/svg.latex?B_i(x)"> is the SH.
+
+Higher the degree of SH, higher the frequncy of the information it can encode.
+
+A rotation R about the origin that sends the unit vector r to r'. Under this operation, a spherical harmonic of degree l and order m transforms into a linear combination of spherical harmonics of the same degree.
+
+The integral of the multiplication of two functions is the dot production of the two corresponding SH coefficients.
+
+### Precompute Radiance Transfer (PRT)
+
+For static scenes, we can project the BRDF, the Visibility, and Lambertian to SH. Since Lighting can also be projected to SH, we can render this scene in **different lighting conditions** in real-time (solve the Rendering Equation with a simple dot production).
+
+Notice the light are allowed to rotate due to the rotational behavior of the spherical harmonics (see above).
+
+For glossy material, the BRDF also need to be projected to SH. In this case, the number of coefficents needed for the scene is squared (a matrix). Then the shading is a vector-matrix multiplication instead of a dot production.
+
 ## MSAA
 
 ![](https://pic3.zhimg.com/80/v2-c27b1744269105ae5c60a879f463cf66_720w.webp)
 
-After enabling MSAA N, the cost for frament shading remains unchanged; the cost for rasterizaion is N times more; the memory cost also increases.
+After enabling MSAA N, the cost for frament shading remains unchanged; the cost for rasterizaion is N times more; the size of fragement buffer, depth buffer and stencil buffer is N times more.
 
-Is MSAA compatible with Early-Z Testing?
+When creating the frame buffers, graphics API needs to know wether MSAA is enabled or not. E.g., Vulkan's [`VkImageCreateInfo`](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImageCreateInfo.html) requires a [`VkSampleCountFlagBits`](https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSampleCountFlagBits.html) bit.
+
+Is MSAA compatible with Early-Z Testing? (my assumption: after enable MSAA the cost for fragment shading with Early-Z testing will increase)
 
 ## Normal Map
 
@@ -132,15 +160,11 @@ Codes:
 vec3 getIBLContribution(PBRInfo pbrInputs, vec3 n, vec3 reflection)
 {
 	float lod = (pbrInputs.perceptualRoughness * uboParams.prefilteredCubeMipLevels);
-	// retrieve a scale and bias to F0. See [1], Figure 3
 	vec3 brdf = (texture(samplerBRDFLUT, vec2(pbrInputs.NdotV, 1.0 - pbrInputs.perceptualRoughness))).rgb;
 	vec3 diffuseLight = SRGBtoLINEAR(tonemap(texture(samplerIrradiance, n))).rgb;
-
 	vec3 specularLight = SRGBtoLINEAR(tonemap(textureLod(prefilteredMap, reflection, lod))).rgb;
-
 	vec3 diffuse = diffuseLight * pbrInputs.diffuseColor;
 	vec3 specular = specularLight * (pbrInputs.specularColor * brdf.x + brdf.y);
-
 	return diffuse + specular;
 }
 ```
