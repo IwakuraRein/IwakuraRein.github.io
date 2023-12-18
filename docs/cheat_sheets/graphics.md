@@ -8,6 +8,10 @@ tags:
 ---
 {% raw %}
 
+## Miscellaneous
+
+- To solve "Peter-Panning", we can cull front face when rendering the shadowmap.
+
 ## Pipeline
 
 ![](https://vulkan-tutorial.com/images/vulkan_simplified_pipeline.svg)
@@ -15,6 +19,14 @@ tags:
 ## Photometry
 
 ![](img/Photometry.png)
+
+## Percentage-Closer Filtering (PCF)
+
+When sampling shadowmapping, sample multiple times using the nearby positions around the shading point (noticing this is not filtering).
+
+## Percentage Closer Soft Shadows (PCSS)
+
+When using PCF, sample multiple pixels on the shadowmap, calculate the average distance between the shading point and the object that blocks the light source. Use this distance to determine the size of PCF.
 
 ## Barycentric coordinates
 
