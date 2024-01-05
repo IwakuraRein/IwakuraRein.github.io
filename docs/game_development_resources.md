@@ -61,9 +61,11 @@ Most of the websites listed here offer royalty-free resources for game developme
 * [Twine](https://twinery.org/)
 * [ink](https://www.inklestudios.com/ink/)
 
-## Unity Plugins
+## Unity Resources
 
+* [LiteNetLib](https://github.com/RevenantX/LiteNetLib)
 * [UltEvents](https://kybernetik.itch.io/ultevents)
+* [Behavior Designer](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-designer-behavior-trees-for-everyone-15277)
 * [Odin](https://odininspector.com/)
 * [Obi](http://obi.virtualmethodstudio.com/)
 * [Magica Cloth 2](https://assetstore.unity.com/packages/tools/physics/magica-cloth-2-242307)
@@ -76,6 +78,8 @@ Most of the websites listed here offer royalty-free resources for game developme
 
 ### Graphics
 
+* [URP Cookbook](https://github.com/NikLever/Unity-URP-Cookbook)
+* [Flat Kit](https://assetstore.unity.com/packages/vfx/shaders/flat-kit-toon-shading-and-water-143368)
 * [Next-Gen Soft-Shadows](https://assetstore.unity.com/packages/vfx/shaders/next-gen-soft-shadows-137380)
 * [Mobile Screen Space Planar Reflection](https://github.com/ColinLeung-NiloCat/UnityURP-MobileScreenSpacePlanarReflection)
 * [Simple Water Shader Urp](https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449)
