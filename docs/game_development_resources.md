@@ -37,6 +37,7 @@ Most of the websites listed here offer royalty-free resources for game developme
 
 ## Textures
 
+* [Retro Diffusion](https://www.retrodiffusion.ai/)
 * [FREE PBR](https://freepbr.com/)
 * [Poly Haven](https://polyhaven.com/textures)
 * [textures.com](https://www.textures.com/)

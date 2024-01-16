@@ -13,18 +13,9 @@ tags:
 | -------- | ------- | ------- |
 | <a href="#const_cast" target="_self"><code>const_cast</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/language/const_cast) |  |
 | <a href="#distance" target="_self"><code>std::distance</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/iterator/distance) | [CPlusPlus.com](https://cplusplus.com/reference/iterator/distance/) |
+| <a href="#remove_reference" target="_self"><code>std::remove_reference</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/types/remove_reference) | [CPlusPlus.com](https://cplusplus.com/reference/type_traits/remove_reference) |
+| <a href="#forward" target="_self"><code>std::forward</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/types/forward) | [CPlusPlus.com](https://cplusplus.com/reference/type_traits/forward) |
 
-<a name="const_cast"></a>
-- `const_cast` allows you to modify a constant pointer or reference. Noticed that it won't work for constant variables.
-  ```cpp
-  int i = 3;
-  const int& rci = i;
-  const_cast<int&>(rci) = 4;
-
-  const int i = 5;
-  const int* p = &i;
-  *const_cast<int*>(p) = 6; // won't work
-  ```
 - Meyer's Singleton
   ```cpp
   class Singleton {
@@ -42,8 +33,163 @@ tags:
       ~Singleton() = default;
   };
   ```
+
+- How to call base method with a pointer/reference to the child object: `child->base::foo()`
+
+- When using `reinterpret_cast` for non-pointer/reference: `unsigned int j = 0xffffffffu; int jj = reinterpret_cast<int&>(j);`.
+
 <a name="distance"></a>
 - `distance(first, second)` returns the number of increments for `first` to get to `second`. For example, `distance(container.begin(), container.end())` returns the contianer's size.
+
+<a name="const_cast"></a>
+- `const_cast` allows you to modify a constant pointer or reference. Noticed that it won't work for constant variables.
+  ```cpp
+  int i = 3;
+  const int& rci = i;
+  const_cast<int&>(rci) = 4;
+
+  const int i = 5;
+  const int* p = &i;
+  *const_cast<int*>(p) = 6; // won't work
+  ```
+  You can use `const_cast` to implement `T const& operator[](const size_t&) const` with `T& operator[](const size_t&)`:
+  ```cpp
+  T const& operator[] (const size_t& idx) const {
+    return const_cast<T&>(*this)[idx];
+  }
+  ```
+
+<a name="remove_reference"></a>
+- `std::remove_reference`: make sure the parameter is value, not reference.
+  ```cpp
+  template<typename T>
+  void foo(typename remove_reference<T>::type param) {}
+  ```
+  Add the implementation of `std::move` needs it:
+  ```cpp
+  template<typename T>
+  typename std::remove_reference<T>::type&& move(T&& t) {
+    return static_cast<typename std::remove_reference<T>::type&&>(t);
+  }
+  ```
+  Sample implementation:
+  ```cpp
+  template <class T>
+  struct remove_reference {
+    typedef T type;
+  };
+  template <class T>
+  struct remove_reference<T&> {
+    typedef T type;
+  };
+  template <class T>
+  struct remove_reference<T&&> {
+    typedef T type;
+  };
+  ```
+
+<a name="forward"></a>
+- `std::forward`: Perfect forwarding is there to ensure that the argument provided to a function is forwarded to another function (or used within the function) with the same value category (basically r-value vs. l-value) as originally provided.
+  
+  **Use it when forwarding parameters to another funcion inside a funtion that has universal reference** because **rvalue reference is lvalue**.
+
+  Sample Implementation (think about Reference Collapsing):
+  ```cpp
+  template <typename T>
+  T&& forward(typename std::remove_reference<T>::type& param) {
+    return static_cast<T&&>(param);
+  }
+  template <typename T>
+  T&& forward(typename std::remove_reference<T>::type&& param) {
+    return static_cast<T&&>(param);
+  }
+  ```
+
+- Nested template example:
+  ```cpp
+  template<template<typename, typename> class Container, typename T, typename TT>
+  void foo(Container<T, TT>& p) {
+    std::cout << typeid(T).name() << " " << typeid(TT).name() << "\n";
+  }
+  ```
+
+- Force using array as parameter. Pointer not allowed:
+  ```cpp
+  template<size_t N>
+  size_t getCStrLength(const char(&str)[N]) {
+    return N;
+  }
+  ```
+
+- ```cpp
+  int i = 0xffffffff;
+  unsigned int u = 0xffffffff;
+  cout << i << "\n";          // -1
+  cout << u << "\n";          // 4294967295
+  cout << 0xffffffff << "\n"; // 4294967295
+  ```
+
+- Overloading `+`:
+  ```cpp
+  foo foo::operator+ (const foo& c) const
+  {
+    foo result;
+    // ...
+    return result;
+  }
+  ```
+
+- Overloading `+=`:
+  ```cpp
+  foo& foo::operator+= (const foo& c)
+  {
+    //...
+    return *this;
+  }
+  ```
+
+- Overloading `<<` and `>>`:
+  ```cpp
+  std::ostream& operator<<(std::ostream& os, const T& obj)
+  {
+      // write obj to stream
+      return os;
+  }
+  std::istream& operator>>(std::istream& is, T& obj)
+  {
+      // read obj from stream
+      if (/* T could not be constructed */)
+          is.setstate(std::ios::failbit);
+      return is;
+  }
+  ```
+
+## Substitution failure is not an error
+
+## Multithreading
+
+- `std::thread` can run a function on a new thread.
+  ```cpp
+  #include <thread>
+  void foo() {}
+  int main() {
+    std::thread worker(foo);
+    // do other things...
+    worker.join(); // wait for it to complete
+  }
+  ```
+- Use `std::scoped_lock` (C++ 17) or `std::lock_guard` (C++ 11) to lock a `std::mutex` so that you don't need to release the lock manually.
+- Use `std::atomic<T>` to create shared memories:
+  ```cpp
+  std::atomic<bool> ready (false);
+  void foo() {
+    while (!ready) std::this_thread::yield(); // use yiled when waiting
+    // do something
+  }
+  ```
+- `compare_exchange_weak` vs. `compare_exchange_strong`: `compare_exchange_weak` may not exchange the desired value and return `false` even if the comparing value equals to the memory. `compare_exchange_strong` will guarentee the successfulness.
+
+
 
 ## Memory
 
