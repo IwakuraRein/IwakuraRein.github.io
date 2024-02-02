@@ -64,6 +64,7 @@ Most of the websites listed here offer royalty-free resources for game developme
 
 ## Unity Resources
 
+* [SUPER TILED2UNITY](https://github.com/Seanba/SuperTiled2Unity?tab=readme-ov-file)
 * [LiteNetLib](https://github.com/RevenantX/LiteNetLib)
 * [UltEvents](https://kybernetik.itch.io/ultevents)
 * [Behavior Designer](https://assetstore.unity.com/packages/tools/visual-scripting/behavior-designer-behavior-trees-for-everyone-15277)

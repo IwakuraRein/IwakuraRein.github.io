@@ -8,6 +8,24 @@ tags:
 ---
 {% raw %}
 
+## Memory Layout
+
+### Code (Text) Segment
+
+Store executable instructions. i.e., functions and member functions.
+
+### Data Segment 
+
+Global and static variables.
+
+### Stack
+
+Temporary variables.
+
+### Heap
+
+Dynamic memory allocation. Notice that **member variables could be both in stack or heap**. It depends on how the object is instantiated.
+
 ## Miscellaneous
 |  |  |  |
 | -------- | ------- | ------- |
@@ -16,6 +34,34 @@ tags:
 | <a href="#remove_reference" target="_self"><code>std::remove_reference</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/types/remove_reference) | [CPlusPlus.com](https://cplusplus.com/reference/type_traits/remove_reference) |
 | <a href="#forward" target="_self"><code>std::forward</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/types/forward) | [CPlusPlus.com](https://cplusplus.com/reference/type_traits/forward) |
 
+- Why we need placement new?
+  - Because memory allocation require calling the kernel. Calling the kernel all the time is bad in terms of performance.
+- C++ uses "name mangling to implement overload. That's why when using a C library, the functions defined in the header needs `extern "C" {}` to disable  name mangling.
+- About intialize list: a class's member variables will initialize before the constructor is excuted unless you write initializer list in the constructor. Also notice that **the order the member variables initialize is not influenced by the order you write the initializer list**.
+
+- In a class definition, do not write initializer for static members, unless `static constexpr`.
+
+- The static variables defined inside a template function and class may react not as expected:
+  ```cpp
+  template<typename T> void foo(const T& x) {
+    static int v=1; cout << v++ << endl;
+  }
+  int main() {
+    foo(1); foo(1.1); // 1 1
+  }
+  ```
+
+- Within a single compilation unit, static variables are initialized in the same order as they are defined in the source (this is called Ordered Dynamic Initialization). **Across compilation units, however, the order is undefined**: you don’t know if a static variable defined in a.cpp will be initialized before or after one in b.cpp.
+  - One possible way to solve this is to wrap your global static variable in a function, like how singleton does:
+  ```cpp
+  // static int a = 1; // don't
+  int GetA() {
+    static int a = 1;
+    return a;
+  }
+  ```
+- The size of an empty class/struct is 1 byte.
+  - The two different objects will have different addresses.
 - Meyer's Singleton
   ```cpp
   class Singleton {
@@ -193,6 +239,19 @@ tags:
 
 ## Memory
 
+- Padding: 
+  ```cpp
+  struct A { // size 12
+    char a; char b; char c;
+    int d;
+    char e;
+  }
+  struct B { // size 8
+    char a; char b; char c; char d;
+    int e;
+  }
+  ```
+
 |  |  |  |
 | -------- | ------- | ------- |
 | <a href="#calloc" target="_self"><code>calloc</code></a> | [CPP Reference](https://en.cppreference.com/w/c/memory/calloc) | [CPlusPlus.com](https://cplusplus.com/reference/cstdlib/calloc/) |
@@ -200,6 +259,7 @@ tags:
 
 <a name="calloc"></a>
 - `calloc` takes two arguments and initializes the allocated memory block to zero: `int *arr = (int*)calloc(n, sizeof(int));`
+  - `calloc` is slower than `malloc` cause it will initialize the memory to 0.
 - **Placement new**: Explicitly create objects on a specifized memory block. `char* buffer = new char[sizeof(MyClass)]; MyClass* obj = new (buffer) MyClass();`<br>Object Pooling can be achieved with placement new.
 <a name="allocator"></a>
 - `allocator` is a wrapper for `malloc` and `free`.
