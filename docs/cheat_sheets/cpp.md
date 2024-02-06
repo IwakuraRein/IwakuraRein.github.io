@@ -51,8 +51,9 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
   }
   ```
 
-- Within a single compilation unit, static variables are initialized in the same order as they are defined in the source (this is called Ordered Dynamic Initialization). **Across compilation units, however, the order is undefined**: you don’t know if a static variable defined in a.cpp will be initialized before or after one in b.cpp.
-  - One possible way to solve this is to wrap your global static variable in a function, like how singleton does:
+- If global variable is to be used across multiple .c files, you should not declare it static. Instead you should declare it `extern` in header file included by all .c files that need it. `static` is within the compilation unit so every .cpp files that include the header file has its own version of this variable.
+  - In header file, write `extern int GlobalState;` and in one cpp file, write `int GlobalState = 1;`.
+  - Or alternatively:
   ```cpp
   // static int a = 1; // don't
   int GetA() {
@@ -79,9 +80,10 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
       ~Singleton() = default;
   };
   ```
-
+- Can I instantiate a abstract class?
+  - Only if you implemented the pure virutal functions in the abstract class. A function decorated with `=0` can have definition.
+  - `=0` asks all the children override this function.
 - How to call base method with a pointer/reference to the child object: `child->base::foo()`
-
 - When using `reinterpret_cast` for non-pointer/reference: `unsigned int j = 0xffffffffu; int jj = reinterpret_cast<int&>(j);`.
 
 <a name="distance"></a>
@@ -239,24 +241,48 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
 
 ## Memory
 
-- Padding: 
+- Packing (padding is the size of struct's largest element): 
   ```cpp
-  struct A { // size 12
+  struct A { // size 8
+    char a;
+    int e;
+  }
+  struct B { // size 12
     char a; char b; char c;
     int d;
     char e;
   }
-  struct B { // size 8
+  struct C { // size 8
     char a; char b; char c; char d;
     int e;
+  }
+  struct D { // size 16.
+    // padding is not sizeof(B) but still sizeof(int).
+    // nested structures will be opened
+    int a;
+    B b;
+  }
+  ```
+  To disable packing, `#pragma pack(1)`. Without packing, CPU deoes more readings.
+- Impact of VPtr:
+  ```cpp
+  class A { // size 1
+    char a;
+  }
+  class B { // size 16
+    char a;
+    virtual void foo() {}
   }
   ```
 
 |  |  |  |
 | -------- | ------- | ------- |
+| <a href="#realloc" target="_self"><code>realloc</code></a> | [CPP Reference](https://en.cppreference.com/w/c/memory/realloc) | [CPlusPlus.com](https://cplusplus.com/reference/cstdlib/realloc/) |
 | <a href="#calloc" target="_self"><code>calloc</code></a> | [CPP Reference](https://en.cppreference.com/w/c/memory/calloc) | [CPlusPlus.com](https://cplusplus.com/reference/cstdlib/calloc/) |
 | <a href="#allocator" target="_self"><code>std::allocator</code></a> | [CPP Reference](https://en.cppreference.com/w/cpp/memory/allocator) | [CPlusPlus.com](https://cplusplus.com/reference/memory/allocator/) |
 
+<a name="realloc"></a>
+- `realloc` tries to expand or compress the **exisiting** memories. If there is not enough memory, the old memory block is not freed and null pointer is returned.
 <a name="calloc"></a>
 - `calloc` takes two arguments and initializes the allocated memory block to zero: `int *arr = (int*)calloc(n, sizeof(int));`
   - `calloc` is slower than `malloc` cause it will initialize the memory to 0.
