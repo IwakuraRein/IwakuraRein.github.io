@@ -107,6 +107,31 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
   }
   ```
 
+- add two numbers using bitwise operationrs:
+    ```cpp
+    while(y) {
+      // Carry now contains common set bits of x and y
+      carry = x & y ;
+      // Sum of bits of x and y where at least one of the bits is not set
+      x = x ^ y; 
+      // Carry is shifted by one so that adding it to x gives the required sum
+      y = carry << 1; }
+    return x;
+    ```
+- ```cpp
+  bool isPowerOfTwo(int n) {
+    return (n & (n - 1)) == 0;
+  }
+  ```
+- ```cpp
+  bool swap(int& a, int& b) {
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+  }
+  ```
+
+
 <a name="remove_reference"></a>
 - `std::remove_reference`: make sure the parameter is value, not reference.
   ```cpp
@@ -214,6 +239,8 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
 
 ## Substitution failure is not an error
 
+TODO
+
 ## Multithreading
 
 - `std::thread` can run a function on a new thread.
@@ -226,8 +253,11 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
     worker.join(); // wait for it to complete
   }
   ```
+- Call `join()` / `detach()` two times will crash the program.
+- Call `thread`'s destructor before `join()` or `detach()` will crash the program.
+- When `main()` returns, all the detached threads will be suspended by the OS.
 - Use `std::scoped_lock` (C++ 17) or `std::lock_guard` (C++ 11) to lock a `std::mutex` so that you don't need to release the lock manually.
-- Use `std::atomic<T>` to create shared memories:
+- Use `std::atomic<T>`:
   ```cpp
   std::atomic<bool> ready (false);
   void foo() {
@@ -237,31 +267,142 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
   ```
 - `compare_exchange_weak` vs. `compare_exchange_strong`: `compare_exchange_weak` may not exchange the desired value and return `false` even if the comparing value equals to the memory. `compare_exchange_strong` will guarentee the successfulness.
 
+### Atomic vs. Mutex
 
+TODO
+
+## Memory Barrier
+
+```cpp
+int x = 0, y = 0;
+// thread 1
+x = 1;
+r1 = y;
+cout << r1 << "\n";
+// thread 2
+y = 1;
+r2 = x;
+cout << r2 << "\n";
+```
+
+The results might **all** be zero because the optimization of the compiler, or different CPU core having different caches. To synchronize the order of memory RW, we can use mutex. We can also use memory barriers (faster than mutex). 
+
+Memory barriers will guarantee that the order of RW memories will be the same as the order of the source codes. E.g., thread 1 may execute `r1 = y` before `x = 1` because the optimization by the compiler. Using memory barriers can force the execution order.
+
+```cpp
+int x = 0, y = 0;
+// thread 1
+x = 1;
+STORELOAD_FENCE();
+r1 = y;
+cout << r1 << "\n";
+// thread 2
+y = 1;
+STORELOAD_FENCE();
+r2 = x;
+cout << r2 << "\n";
+```
+
+In this case the results might be `1 1`, `0 1`, `1 0` but never `0 0`!
+
+
+- Basic types:
+  - Load-Load
+
+    The loads before the barrier will happen before the loads after the barrier.
+
+  - Store-Store
+    
+    The stores before the barrier will happen before the stores after the barrier. Think of `git push`.
+
+  - Load-Store
+
+  - Store-Load
+
+- Acquire: Load-Load + Load-Store
+  - Every memory R/W after Acquire stays after Acquire.
+  
+    ![](https://preshing.com/images/read-acquire.png)
+
+- Release: Load-Store + Store-Store
+  - Every memory R/W before Release stays before Release.
+
+    ![](https://preshing.com/images/write-release.png)
+
+## Memory Order
+
+### Sequence Consistent (strictest)
+
+```cpp
+std::atomic<bool> x { false };
+// in thread, write
+x.store(true, std::memory_order_deq_cst);
+// in thread, read
+bool y = x.load(std::memory_order_deq_cst);
+```
+
+**Sequence Consistent** guarantees the memory RW order is the same as source codes (memory barriers). 
+
+It also guarantees if at a certain time t, a thread R/W the atomic variable, all the threads after t will see the results after this R/W. E.g., if thread 1 writes the variable with 1 at time t, then all the threads at t+1 loading the variable will get 1. (think of how it might not be 1 on a multi core CPU)
+
+### Relaxed (least strict)
+
+`std::memory_order_relaxed`. Used in `shared_ptr`
+
+**Relaxed** guarantees the R/W is atomic. It doesn't guarantee the order of executions of R/W is the same as the source codes. (no memory barriers)
+
+### Acquire & Release
+
+See Memory Barriers.
+
+```std::memory_order_release```
+
+```std::memory_order_release```
+
+All the memory R/W before Release will be seen by Acquire.
+
+![](./img/acquire_and_release.png)
+
+### Consume
+
+```std::memory_order_consume```.
+
+Consume is weaker than Acquire. It won't carry dependancies from memories that not related to Release.
+
+![](./img/consume_and_release.png)
 
 ## Memory
 
 - Packing (padding is the size of struct's largest element): 
   ```cpp
-  struct A { // size 8
-    char a;
-    int e;
-  }
+  struct A { // size 16
+    int a;
+    double e;
+  };
   struct B { // size 12
     char a; char b; char c;
     int d;
     char e;
-  }
-  struct C { // size 8
-    char a; char b; char c; char d;
-    int e;
-  }
-  struct D { // size 16.
-    // padding is not sizeof(B) but still sizeof(int).
-    // nested structures will be opened
-    int a;
-    B b;
-  }
+  };
+  struct C { // size 24.
+    // padding is not sizeof(B) but still sizeof(int). nested structures doesn't change padding
+    // but sizeof(aa) is still A's size.
+    int a;  // 8
+    A aa;   // 16
+  };
+  struct C { // size 24.
+    // padding is not sizeof(B) but still sizeof(int). nested structures doesn't change padding
+    // but sizeof(aa) is still A's size.
+    int a;  // 8
+    A aa;   // 16
+  };
+  struct D { // size 24.
+    // padding is not sizeof(B) but still sizeof(int). nested structures doesn't change padding
+    // but sizeof(aa) is still A's size.
+    int a; // 8
+    A aa;  // 16
+    int b; //8
+  };
   ```
   To disable packing, `#pragma pack(1)`. Without packing, CPU deoes more readings.
 - Impact of VPtr:

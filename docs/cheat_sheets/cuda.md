@@ -28,8 +28,9 @@ tags:
 - Each SM has one L1 and one shared memory. All SM share one L2.
 - Always use shared memory when random accessing. Randomly accessing global memory is very slow.
 - **Shared Memory can only be used for threads that are in the same block**. 
-- Although shared memory is for random accessing, we should avoid multimple threads in one warp trying to access the same shared memory (bank conflict).
-  - But it's okay if all the 32 threads access the same shared memory (broadcast):
+- Shared memory is divided into memory banks.
+- Although shared memory is for random accessing, we should avoid multimple threads in one warp trying to access the same shared memory bank (bank conflict).
+  - But it's okay if all the 32 threads access the same shared memory address (broadcast):
     ![](img/banks.png)
   - An example of avoiding bank conflicts:
     ```cpp
@@ -113,6 +114,20 @@ tags:
     devP[row * width + col] = pValue;
   }
   ```
+
+## Matrix Transpose
+
+### Naive Way
+
+Reading has good memory coalesce. Writing has many cache misses.
+
+![](./img/matrix_transpose.png)
+
+### Improvement
+
+Inside the kernel, cache the output into shared memory before writing into the global memory.
+
+![](./img/matrix_transpose2.png)
 
 ## Scan
 
