@@ -266,6 +266,23 @@ TODO
   }
   ```
 - `compare_exchange_weak` vs. `compare_exchange_strong`: `compare_exchange_weak` may not exchange the desired value and return `false` even if the comparing value equals to the memory. `compare_exchange_strong` will guarentee the successfulness.
+- Use compare and swap to implement atomic increment (CAS return old value):
+  ```cpp
+  T old = *address, assume;
+  do {
+    assume = old;
+    old = CAS(address, old, old+1);
+  } while (old != assume);
+  ```
+- Use compare and swap to implement mutex:
+  ```cpp
+  int lock = 0;
+  // ...
+  while (CAS(&lock, 0, 1) == 1) // try to lock it
+    continue;
+  // ...
+  lock = 0;
+  ```
 
 ### Atomic vs. Mutex
 
@@ -385,19 +402,13 @@ Consume is weaker than Acquire. It won't carry dependancies from memories that n
     char e;
   };
   struct C { // size 24.
-    // padding is not sizeof(B) but still sizeof(int). nested structures doesn't change padding
-    // but sizeof(aa) is still A's size.
-    int a;  // 8
-    A aa;   // 16
-  };
-  struct C { // size 24.
-    // padding is not sizeof(B) but still sizeof(int). nested structures doesn't change padding
+    // padding is not sizeof(A) but still sizeof(int). nested structures doesn't change padding
     // but sizeof(aa) is still A's size.
     int a;  // 8
     A aa;   // 16
   };
   struct D { // size 24.
-    // padding is not sizeof(B) but still sizeof(int). nested structures doesn't change padding
+    // padding is not sizeof(A) but still sizeof(int). nested structures doesn't change padding
     // but sizeof(aa) is still A's size.
     int a; // 8
     A aa;  // 16

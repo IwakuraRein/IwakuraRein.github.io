@@ -109,10 +109,27 @@ tags:
       __syncthreads();
     
       for (int k = 0; k < TILE_WIDTH; ++k)
-          Pvalue += sM[ty][k] * sN[k][tx];
+        Pvalue += sM[ty][k] * sN[k][tx];
       __synchthreads(); // don't forget this line. writing shared memories ahead.
     }
     devP[row * width + col] = pValue;
+  }
+  ```
+- Use data prefetching:
+  ```cpp
+  // ...
+  float m = devM[row * width + tx];
+  float n = devM[col + ty * with];
+  for (int m = 1; m <= width / TILE_WIDTH; m++) {
+    sM[ty][tx] = m
+    sN[ty][tx] = n
+    __syncthreads();
+
+    float m = devM[row * width + tx];
+    float n = devM[col + ty * with];
+    for (int k = 0; k < TILE_WIDTH; ++k)
+      Pvalue += sM[ty][k] * sN[k][tx];
+    __syncthreads();
   }
   ```
 
@@ -120,7 +137,7 @@ tags:
 
 ### Naive Way
 
-Reading has good memory coalesce. Writing has many cache misses.
+Reading has good memory coalescing. Writing has many cache misses.
 
 ![](./img/matrix_transpose.png)
 
