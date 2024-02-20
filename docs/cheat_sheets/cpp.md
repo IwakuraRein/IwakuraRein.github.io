@@ -119,6 +119,16 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
     return x;
     ```
 - ```cpp
+  bool hasDifferentSign(int m, int n) {
+    return (m ^ n) < 0;
+  }
+  ```
+- ```cpp
+  int getLowestBit(int n) {
+    return n & (-n);
+  }
+  ```
+- ```cpp
   bool isPowerOfTwo(int n) {
     return (n & (n - 1)) == 0;
   }
@@ -138,7 +148,7 @@ Dynamic memory allocation. Notice that **member variables could be both in stack
   template<typename T>
   void foo(typename remove_reference<T>::type param) {}
   ```
-  Add the implementation of `std::move` needs it:
+  And the implementation of `std::move` needs it:
   ```cpp
   template<typename T>
   typename std::remove_reference<T>::type&& move(T&& t) {
@@ -265,8 +275,36 @@ TODO
     // do something
   }
   ```
+- Semophore (busy waiting?)
+  ```cpp
+  constexpr int WORKER_NUM = 32;
+  std::counting_semaphore<WORKER_NUM> signal(0);
+  void Scheduler() {
+    signal.release(WORKER_NUM);
+  }
+  void Worker() {
+    signal.acquire();
+  }
+  ```
+- Condition variable (not busy waiting)
+  ```cpp
+  std::mutex m;
+  std::condition_variable cv;
+  bool ready = false;
+  void Scheduler() {
+    {
+      std::lock_guard lk(m);
+    }
+  }
+  void Worker() {
+    std::unique_lock lk(m);
+    cv.wait(lk, []{ return ready; });
+    //...
+    lk.unlock();
+  }
+  ```
 - `compare_exchange_weak` vs. `compare_exchange_strong`: `compare_exchange_weak` may not exchange the desired value and return `false` even if the comparing value equals to the memory. `compare_exchange_strong` will guarentee the successfulness.
-- Use compare and swap to implement atomic increment (CAS return old value):
+- Use compare and swap to implement atomic increment (assume CAS return old value):
   ```cpp
   T old = *address, assume;
   do {
@@ -274,7 +312,7 @@ TODO
     old = CAS(address, old, old+1);
   } while (old != assume);
   ```
-- Use compare and swap to implement mutex:
+- Use compare and swap to implement spin lock:
   ```cpp
   int lock = 0;
   // ...
@@ -282,6 +320,33 @@ TODO
     continue;
   // ...
   lock = 0;
+  ```
+- Use compare and swap to check if atomic operation failed (and keep trying again):
+  ```cpp
+  template<typename T>
+  bool CircularQueue::Pop(T& val) {
+    int head;
+    do {
+      head = _head.load();
+      // if (head == _tail.load())
+      if (head == _write.load()) // avoid reading the memory that hasn't been written
+        return false;
+      val = _buffer[head];
+    } while (!_head.compare_exchange_strong(head, (head+1) % _capacity))
+    return true;
+  }
+  template<typename T>
+  bool CircularQueue::Push(T& val) {
+    int tail;
+    do { // move the tail pointer
+      tail = _tail.load();
+      if ((tail+1) % _capacity == _head.load())
+        return false;
+    } while (!_tail.compare_exchange_strong(tail, (tail+1) % _capacity))
+    _buffer[tail] = val;
+    while (!_write.compare_exchange_strong(tail, (tail+1) % _capacity)) // move the write pointer after writing
+    return true;
+  }
   ```
 
 ### Atomic vs. Mutex
@@ -372,7 +437,7 @@ It also guarantees if at a certain time t, a thread R/W the atomic variable, all
 
 See Memory Barriers.
 
-```std::memory_order_release```
+```std::memory_order_acquire```
 
 ```std::memory_order_release```
 
