@@ -226,6 +226,87 @@ vec3 getIBLContribution(PBRInfo pbrInputs, vec3 n, vec3 reflection)
 }
 ```
 
+## [Sampling the HDR Environment Map](https://github.com/nvpro-samples/vk_raytrace/blob/8da5c2e4dd843313a2a5c5333eebbc02afb9845a/src/hdr_sampling.cpp)
+
+1. For each texel of the environment map, compute the related solid angle subtended by the texel and store the weighted luminance. 
+    - `weighted_lum[pxiel_idx] = area_of_pixel(pxiel_idx) * lum_of_pixel(pxiel_idx);`
+2. Build the alias map. 
+    - `float inv_integral = 1.0 / accumulate(weighted_lum);`
+    - `float inv_avg = (float)weighted_lum.size() * inv_integral;`
+    - Initialize accelaration structure and compute ratio `q`:
+      ```cpp
+      for (int i = 0; i < weighted_lum.size(); ++i) {
+        accel_struct[i].q = weighted_lum[i] * inv_avg;
+        accel_struct[i].alias = i;
+      }
+      ```
+    - Texels with a value q < 1 (ie. below average) are stored incrementally from the beginning of the array, while texels emitting higher-than-average luminance are stored from the end of the array.
+      ```cpp
+      vector<size_t> table(weighted_lum.size());
+      size_t small = 0; size_t large = weighted_lum.size(); // double pointers
+      for (int i = 0; i < weighted_lum.size(); ++i) {
+        if (accel_struct[i].q < 1.0) table[small++] = i;
+        else table[--large] = i;
+      }
+      ```
+    - Associate the lower-energy texels to higher-energy ones. We want combined texels' total luminance as close to the average as   possible. 
+      ```cpp
+      for (small = 0; small < large && large < weighted_lum.size(); ++small) {
+        auto smallIdx = table[small]; auto largeIdx = table[large];
+        auto& smallAccel = accel_struct[smallIdx];
+        auto& largeAccel = accel_struct[largeIdx];
+        smallAccel.alias = largeIdx;
+        largeAccel.q -= (1.0 - smallAccel.q); // calibrate the weight
+        if (largeAccel.q < 1.0) // check if heigher-energy has become lower-energy
+          large++;
+      }
+      ```
+    - Compute the PDF.
+        ```cpp
+        for (auto& accel : accel_struct) {
+          accel.pdf = lum_of_pixel(i) * inv_integral;
+        }
+        for (auto& accel : accel_struct) {
+          accel.aliasPdf = accel_struct[accel.alias].pdf;
+        }
+        ```
+3. Inside the shader, importance sampling on the accelaration structure. 
+    ```c
+    const uint idx  = min(uint(rand_u01() * float(texSize)), texSize - 1);
+    const EnvAccel sample_data = accel_struct[idx];
+    uint env_idx;
+    if(rand_u01() < sample_data.q) {
+      env_idx = idx;
+      pdf = sample_data.pdf;
+    }
+    else {
+      env_idx = sample_data.alias;
+      pdf     = sample_data.aliasPdf;
+    }
+    ```
+
+## Sampling
+
+- ```cpp
+  vec3 CosineSampleHemisphere(float r1, float r2, out float pdf) {
+    vec3  dir;
+    float r   = sqrt(r1);
+    float phi = TWO_PI * r2;
+    dir.x     = r * cos(phi);
+    dir.y     = r * sin(phi);
+    dir.z     = sqrt(max(0.0, 1.0 - dir.x * dir.x - dir.y * dir.y));
+    pdf = dir.z * INV_PI;
+    return dir;
+  }
+  ```
+- ```cpp
+  vec3 UniformSampleHemisphere(float r1, float r2) {
+    float r   = sqrt(max(0.0, 1.0 - r1 * r1));
+    float phi = TWO_PI * r2;
+    return vec3(r * cos(phi), r * sin(phi), r1);
+  }
+  ```
+
 ## Intersection
 
 ### Ray-AABB Intersection
