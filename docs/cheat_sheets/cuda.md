@@ -14,11 +14,24 @@ tags:
   - A block can be only excuted by one SM but an SM can excute different blocks.
   - A CUDA core excutes a thread.
 - ![](img/warp.png)
-   - SM puts cores into warps, and excutes only one warp at any time. The threads in a warp come from the same block and have consecutive indices. Modern GPU has 32 cores per SM so in the optimal situation a warp can finish in one clock: ![](img/cores_per_sm.png)
+   - SM puts cores into warps, and excutes only one warp at any time. The threads in a warp come from the same block and have consecutive indices. Modern GPU has 128 cores per SM so each SM has 4 warp scheduler. 
+  - When a block is divided up into warps, each warp is assigned to a warp scheduler. Warps will stay on the assigned scheduler for the lifetime of the warp.
   - Therefore, try not to diverge the commands in one warp (e.g., using `if-else` statements). Otherwise:
     ![](img/warp_partition.png)
 - Although we can configure how many threads a block has, there is a limit to it (typically 1024).
 - There is also a limit to how many threads an SM handles but I remember when dispatching a kernel function, only **number of the blocks** and **number of the threads per block** are assigned.
+
+## Occupancy
+
+Occupancy is the ratio of the number of active warps per multiprocessor to the maximum number of possible active warps. Another way to view occupancy is the percentage of the hardware's ability to process warps that is actively in use. Higher occupancy does not always result in higher performance, however, low occupancy always reduces the ability to hide latencies, resulting in overall performance degradation. Large discrepancies between the theoretical and the achieved occupancy during execution typically indicates highly imbalanced workloads.
+
+    Suppose 4 clock cycles are needed to dispatch the same instruction for all threads in a warp. If there is one global memory access every 4 instructions, how many warps are needed to fully tolerate 200-cycle memory latency?
+
+    The first warp will run for 16 cycles before a memory access is required. After this time this warp needs to wait for 200 cycles. At this time the warp scheduler can switch to another warp and start executing its first 4 instructions. After another 16 cycles this process repeats until the scheduler can switch back to the original warp after 200 cycles.
+
+    So number of warps = ceil(200/16) = 13.
+
+
 
 ## Memory
 
@@ -38,7 +51,60 @@ tags:
   __shared__ float shared[256];
   float f = shared[tId + s * threadIdx.x]; // when s is odd
   ```
+- Bank conflicts are only possible within a warp. No bank conflicts occur between different warps.
 
+Host (CPU) data allocations are pageable by default. Transfering pageable data to device is slow. To maxiumize the bandwidth, use `cudaHostAlloc` or `cudaHostRegister`.
+
+## Stream
+
+- `cudaStream_t`
+- `__host__​cudaError_t cudaStreamCreate (cudaStream_t* pStream)`
+- `__host__​cudaError_t cudaStreamSynchronize (cudaStream_t stream)`
+- `__host__​__device__​cudaError_t 	cudaStreamDestroy(cudaStream_t stream)`
+
+### cudaMemcpyAsync
+
+`__host__​__device__​cudaError_t cudaMemcpyAsync (void* dst, const void* src, size_t count, cudaMemcpyKind kind, cudaStream_t stream = 0)`
+
+`cudaMemcpyAsync` won't stall CPU while `cudaMemcpy` does.
+
+If kind is cudaMemcpyHostToDevice or cudaMemcpyDeviceToHost and the stream is non-zero, **the copy may overlap with operations in other streams**.
+
+![](img/cudaMemcpyAsync.png)
+
+```c
+for (int i = 0; i < nStreams; ++i) {
+  int offset = i * streamSize;
+  cudaMemcpyAsync(&d_a[offset], &a[offset], streamBytes,
+                  cudaMemcpyHostToDevice, stream[i]);
+} for (int i = 0; i < nStreams; ++i) {
+  int offset = i * streamSize;
+  kernel<<<streamSize/blockSize, blockSize, 0, stream[i]>>>(d_a, offset);
+} for (int i = 0; i < nStreams; ++i) {
+  int offset = i * streamSize;
+  cudaMemcpyAsync(&a[offset], &d_a[offset], streamBytes,
+                  cudaMemcpyDeviceToHost, stream[i]);
+} 
+```
+
+
+## Event
+An event is completed when all commands in the stream preceding it complete.
+
+```c
+cudaEvent_t start, stop;
+cudaEventCreate(&start);
+cudaEventCreate(&stop)
+cudaEventRecord(start, stream1);
+kernel<<<gridSize, blockSize, sharedMemSize, stream1>>>();
+cudaEventRecord(stop, stream1);
+cudaEventSynchronize(stop);
+float elapsedTime;
+cudaEventElapsedTime(&elapsedTime, start, stop);
+// cudaEventDestroy(...)
+```
+
+`cudaEventSynchronize` stalls CPU. We can make CPU do some extra jobs before calling `cudaEventSynchronize`.
 
 ## Synchronization and Atomics
 
@@ -59,6 +125,44 @@ tags:
   - `int atomicAnd(int* address, int val)`
   - `int atomicOr(int* address, int val)`
   - `int atomicXor(int* address, int val)`
+
+### warp-level functions
+- `int __all (int prediction)`
+  - Result is non-zero if all threads in the warp evaluate prediction != 0
+- `int __any (int prediction)`
+- `unsigned int __ballot (int prediction)`
+  - Result is an unsigned int where
+
+    Nth thread of the warp sets the Nth bit of the result
+
+    Bit is set to 1 if and only if predicate != 0
+- Shuffle
+  - Indexed: `T __shfl(T var, int srcLane, int width=warpSize)`
+  - Up: `T __shfl_up(T var, unsigned int delta, int width=warpSize)`. Reads from thread whose idx is less then current's.
+  - Down: `T __shfl_down(T var, unsigned int delta, int width=warpSize)`
+  - Butterfly (XOR): Copy from lane based on bitwise xor of own lane id.
+
+    Like exchange, doesn’t have to be 2 way
+
+    `laneMask` controls which bits of `laneId` are “flipped”.
+
+    `T __shfl_xor(T var, unsigned int laneMask, int width=warpSize)`
+  - We can use Shuffle to perform reduce warp wise.
+
+      ```c
+      // warp reduce
+      sum += __shfl_xor(sum, 16);
+      sum += __shfl_xor(sum, 8);
+      sum += __shfl_xor(sum, 4);
+      sum += __shfl_xor(sum, 2);
+      sum += __shfl_xor(sum, 1);
+      // in kernel
+      val = warpReduceSum(val);
+      if (lane == 0) shared[wid]=val;
+      __syncthreads();
+      ```
+
+
 
 ## Matrix Multiplication
 
@@ -149,7 +253,11 @@ Inside the kernel, cache the output into shared memory before writing into the g
 
 ## Scan
 
+Up sweep is the same as parallel reduction.
+
 ![](img/scan.png)
+
+When downsweep, the stride decrements after each step (oppsite to the parallel reduction). In each step, copy the value on the right and write to the left. Sum the both values and write to the right.
 
 ![](img/two_step_scan.png)
 
