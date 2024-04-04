@@ -253,17 +253,25 @@ Inside the kernel, cache the output into shared memory before writing into the g
 
 ## Scan
 
+![](img/scan.png)
+
+Naive way:
+
+![](img/naive_scan.jpg)
+
+Efficient way:
+
+![](img/up_sweep.jpg)
+
 Up sweep is the same as parallel reduction.
 
-![](img/scan.png)
+![](img/down_sweep.jpg)
 
 When downsweep, the stride decrements after each step (oppsite to the parallel reduction). In each step, copy the value on the right and write to the left. Sum the both values and write to the right.
 
-![](img/two_step_scan.png)
-
 ## Reduction
 
-![](img/reduce.png)
+![](img/reduction.jpg)
 
 ```cpp
 __shared__ float partialSum[];
