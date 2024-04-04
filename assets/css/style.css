@@ -532,7 +532,7 @@ footer {
     -webkit-font-smoothing: subpixel-antialiased
 }
 
-@media (min-width: 720px) {
+@media (min-width: 960px) {
     header {
         float: left;
         position: fixed;
@@ -555,7 +555,7 @@ footer {
     }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 959px) {
     body {
         padding: 24px;
     }

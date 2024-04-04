@@ -251,6 +251,19 @@ Inside the kernel, cache the output into shared memory before writing into the g
 
 ![](./img/matrix_transpose2.png)
 
+### Resolve Bank Conflicts
+
+Instead of `__shared__ float smem[BLOCK_SIZE][BLOCK_SIZE]`, use `__shared__ float smem[BLOCK_SIZE][BLOCK_SIZE+1]`.
+
+Others remain the same: 
+
+```c
+smem[threadIdx.y][threadIdx.x] = matA[i * BLOCK_SIZE+ j];
+__syncthreads();
+matB[jj * BLOCK_SIZE + ii] = smem[threadIdx.x][threadIdx.y];
+```
+
+
 ## Scan
 
 ![](img/scan.png)
